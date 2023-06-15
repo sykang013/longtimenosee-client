@@ -11,16 +11,6 @@ interface ButtonMainProps extends PressableProps {
   onPress?: () => void;
 }
 
-const StButton = styled.Pressable<ButtonMainProps>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: ${(props) => props.width}px;
-  height: ${(props) => props.height}px;
-  border-radius: ${(props) => props.borderRadius}px;
-  background-color: ${(props) => props.backgroundColor};
-`;
-
 const ButtonMain = ({
   backgroundColor = globalColor.primary,
   width = 312,
@@ -40,5 +30,15 @@ const ButtonMain = ({
     ></StButton>
   );
 };
+
+const StButton = styled.Pressable<ButtonMainProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+  border-radius: ${(props) => props.borderRadius}px;
+  background-color: ${(props) => props.backgroundColor};
+`;
 
 export default ButtonMain;

@@ -7,10 +7,6 @@ interface ButtonTextProps extends TextProps {
   textColor?: string;
 }
 
-const StButtonText = styled.Text<ButtonTextProps>`
-  color: ${(props) => props.textColor};
-`;
-
 const ButtonText = ({
   textColor = light.background,
   children = '텍스트',
@@ -22,5 +18,9 @@ const ButtonText = ({
     </StButtonText>
   );
 };
+
+const StButtonText = styled.Text<ButtonTextProps>`
+  color: ${(props) => props.textColor};
+`;
 
 export default ButtonText;

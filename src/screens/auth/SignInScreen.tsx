@@ -5,32 +5,6 @@ import { InputAuth } from '@/components/form';
 import { caption, label, light, paragraph } from '@/assets/themes';
 import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 
-const StContainer = styled.View`
-  flex: 1;
-  align-items: center;
-  background-color: ${light.background};
-`;
-
-const StInputContainer = styled.View`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 21px;
-`;
-
-const StFindPwButton = styled.Pressable`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 10px 10px;
-  margin-top: 14px;
-`;
-
-const StFindPwText = styled.Text`
-  color: ${light.contents.contentMain};
-`;
-
 const SignInScreen = () => {
   const [emailActive, setEmailActive] = useState(false);
   const [passwordActive, setPasswordActive] = useState(false);
@@ -65,5 +39,31 @@ const SignInScreen = () => {
     </TouchableWithoutFeedback>
   );
 };
+
+const StContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  background-color: ${light.background};
+`;
+
+const StInputContainer = styled.View`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 21px;
+`;
+
+const StFindPwButton = styled.Pressable`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px 10px;
+  margin-top: 14px;
+`;
+
+const StFindPwText = styled.Text`
+  color: ${light.contents.contentMain};
+`;
 
 export default SignInScreen;

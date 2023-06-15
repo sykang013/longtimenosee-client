@@ -5,6 +5,35 @@ import { RootStackParamList } from '../Navigation';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { globalColor, label, light, paragraph } from '@/assets/themes';
 
+type AuthScreenProps = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'AuthScreen'>;
+};
+
+const AuthScreen = ({ navigation }: AuthScreenProps) => {
+  return (
+    <StContainer>
+      <StMainTitle>언제어디</StMainTitle>
+      <StSubTitle>당신을 위한 약속 도우미</StSubTitle>
+      <StButtonContainer>
+        <StButtonInnerContainer>
+          <StButton>
+            <StButtonText style={label.Small}>게스트로 이용</StButtonText>
+          </StButton>
+          <StButton onPress={() => navigation.navigate('SignInScreen')}>
+            <StButtonText style={label.Small}>로그인</StButtonText>
+          </StButton>
+        </StButtonInnerContainer>
+        <StKaKaoButton>
+          <Image source={require('@/assets/images/kakao_login.png')} />
+        </StKaKaoButton>
+        <StSignUpButton>
+          <StSignUpText style={paragraph.Small}>회원가입</StSignUpText>
+        </StSignUpButton>
+      </StButtonContainer>
+    </StContainer>
+  );
+};
+
 const StContainer = styled.View`
   flex: 1;
   justify-content: center;
@@ -69,34 +98,5 @@ const StSignUpText = styled.Text`
   color: ${light.contents.contentMain};
   text-decoration: underline;
 `;
-
-type AuthScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'AuthScreen'>;
-};
-
-const AuthScreen = ({ navigation }: AuthScreenProps) => {
-  return (
-    <StContainer>
-      <StMainTitle>언제어디</StMainTitle>
-      <StSubTitle>당신을 위한 약속 도우미</StSubTitle>
-      <StButtonContainer>
-        <StButtonInnerContainer>
-          <StButton>
-            <StButtonText style={label.Small}>게스트로 이용</StButtonText>
-          </StButton>
-          <StButton onPress={() => navigation.navigate('SignInScreen')}>
-            <StButtonText style={label.Small}>로그인</StButtonText>
-          </StButton>
-        </StButtonInnerContainer>
-        <StKaKaoButton>
-          <Image source={require('@/assets/images/kakao_login.png')} />
-        </StKaKaoButton>
-        <StSignUpButton>
-          <StSignUpText style={paragraph.Small}>회원가입</StSignUpText>
-        </StSignUpButton>
-      </StButtonContainer>
-    </StContainer>
-  );
-};
 
 export default AuthScreen;
