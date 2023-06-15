@@ -73,6 +73,7 @@
     "index.js",
     "./src/**/*.tsx",
     "./src/**/*.ts",
+    "react-native.config.js",
   ],
   "exclude": [
     "node_modules"
