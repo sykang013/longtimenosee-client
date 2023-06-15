@@ -15,16 +15,6 @@ interface InputAuthProps extends TextInputProps {
   secureTextEntry?: boolean;
 }
 
-const StInput = styled.TextInput<InputAuthProps>`
-  width: ${(props) => props.width}px;
-  height: ${(props) => props.height}px;
-  border-color: ${(props) =>
-    props.isActive ? light.contents.contentMain : light.contents.contentThird};
-  border-bottom-width: 1px;
-  padding: 0;
-  margin: 0;
-`;
-
 const InputAuth = ({
   width,
   height,
@@ -49,5 +39,15 @@ const InputAuth = ({
     />
   );
 };
+
+const StInput = styled.TextInput<InputAuthProps>`
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+  border-color: ${(props) =>
+    props.isActive ? light.contents.contentMain : light.contents.contentThird};
+  border-bottom-width: 1px;
+  padding: 0;
+  margin: 0;
+`;
 
 export default InputAuth;
