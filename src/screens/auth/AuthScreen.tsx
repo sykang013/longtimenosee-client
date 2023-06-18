@@ -4,7 +4,7 @@ import { Image } from 'react-native';
 import { RootStackParamList } from '../Navigation';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { globalColor, label, light } from '@/assets/themes';
-import { ButtonAssist } from '@/components/button';
+import { ButtonAssist } from '@/components/buttons';
 
 type AuthScreenProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'AuthScreen'>;

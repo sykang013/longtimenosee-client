@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import { ButtonAssist, ButtonMain, ButtonText } from '@/components/button';
-import { InputAuth } from '@/components/form';
+import { ButtonAssist, ButtonMain, ButtonText } from '@/components/buttons';
+import { InputAuth } from '@/components/inputs';
 import { label, light, paragraph } from '@/assets/themes';
 import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import { InputAuth } from '@/components/form';
+import { InputAuth } from '@/components/inputs';
 import { Keyboard, TouchableWithoutFeedback, View } from 'react-native';
 import { globalColor, paragraph, light, label } from '@/assets/themes';
-import { ButtonCheckbox, ButtonMain, ButtonText } from '@/components/button';
+import { ButtonCheckbox, ButtonMain, ButtonText } from '@/components/buttons';
 
 const SignUpScreen = () => {
   const [isEmailActive, setIsEmailActive] = useState(false);
