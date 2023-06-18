@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
-import CheckTrue from '@/assets/icons/check_true.svg';
-import CheckFalseGray from '@/assets/icons/check_false_gray.svg';
-import CheckFalsePrimary from '@/assets/icons/check_false_primary.svg';
+import CheckTrue from '@/assets/icons/CheckTrue';
+import CheckFalseGray from '@/assets/icons/CheckFalseGray';
+import CheckFalsePrimary from '@/assets/icons/CheckFalsePrimary';
 import { globalColor, paragraph, light } from '@/assets/themes';
 
 interface StTextProps {
