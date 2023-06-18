@@ -74,6 +74,7 @@
     "./src/**/*.tsx",
     "./src/**/*.ts",
     "react-native.config.js",
+    "declarations.d.ts"
   ],
   "exclude": [
     "node_modules"
