@@ -14,7 +14,7 @@ interface ButtonMainProps extends PressableProps {
 const ButtonMain = ({
   backgroundColor = globalColor.primary,
   width = 312,
-  height = 40,
+  height = 44,
   borderRadius = 4,
   onPress,
   ...rest

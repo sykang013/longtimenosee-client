@@ -3,7 +3,8 @@ import styled from 'styled-components/native';
 import { Image } from 'react-native';
 import { RootStackParamList } from '../Navigation';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { globalColor, label, light, paragraph } from '@/assets/themes';
+import { globalColor, label, light } from '@/assets/themes';
+import { ButtonAssist } from '@/components/button';
 
 type AuthScreenProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'AuthScreen'>;
@@ -26,9 +27,7 @@ const AuthScreen = ({ navigation }: AuthScreenProps) => {
         <StKaKaoButton>
           <Image source={require('@/assets/images/kakao_login.png')} />
         </StKaKaoButton>
-        <StSignUpButton>
-          <StSignUpText style={paragraph.Small}>회원가입</StSignUpText>
-        </StSignUpButton>
+        <ButtonAssist onPress={() => navigation.navigate('SignUpScreen')} title="회원가입" />
       </StButtonContainer>
     </StContainer>
   );
@@ -38,6 +37,7 @@ const StContainer = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
+  background-color: ${light.background};
 `;
 
 const StMainTitle = styled.Text`
@@ -58,6 +58,7 @@ const StSubTitle = styled.Text`
 const StButtonContainer = styled.View`
   display: flex;
   flex-direction: column;
+  gap: 16px;
   margin-top: 187px;
 `;
 
@@ -65,6 +66,7 @@ const StButtonInnerContainer = styled.View`
   display: flex;
   gap: 8px;
   flex-direction: row;
+  justify-content: center;
 `;
 
 const StButton = styled.Pressable`
@@ -85,18 +87,6 @@ const StKaKaoButton = styled.Pressable`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 16px;
-`;
-const StSignUpButton = styled.Pressable`
-  display: flex;
-  margin: 0 auto;
-  padding: 10px 10px;
-  margin-top: 13px;
-`;
-
-const StSignUpText = styled.Text`
-  color: ${light.contents.contentMain};
-  text-decoration: underline;
 `;
 
 export default AuthScreen;
