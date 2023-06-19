@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import { ButtonMain, ButtonText } from '@/components/button';
-import { InputAuth } from '@/components/form';
-import { caption, label, light, paragraph } from '@/assets/themes';
+import { ButtonAssist, ButtonMain, ButtonText } from '@/components/buttons';
+import { InputAuth } from '@/components/inputs';
+import { label, light, paragraph } from '@/assets/themes';
 import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 const SignInScreen = () => {
@@ -29,12 +29,10 @@ const SignInScreen = () => {
             onBlur={() => setPasswordActive(false)}
           />
         </StInputContainer>
-        <ButtonMain style={{ marginTop: 28 }}>
+        <ButtonMain style={{ marginTop: 28, marginBottom: 16 }}>
           <ButtonText style={label.Small}>확인</ButtonText>
         </ButtonMain>
-        <StFindPwButton>
-          <StFindPwText style={caption.XS}>비밀번호 찾기</StFindPwText>
-        </StFindPwButton>
+        <ButtonAssist title="비밀번호 찾기" />
       </StContainer>
     </TouchableWithoutFeedback>
   );
@@ -50,20 +48,7 @@ const StInputContainer = styled.View`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 21px;
-`;
-
-const StFindPwButton = styled.Pressable`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 10px 10px;
-  margin-top: 14px;
-`;
-
-const StFindPwText = styled.Text`
-  color: ${light.contents.contentMain};
+  margin-top: 32px;
 `;
 
 export default SignInScreen;
