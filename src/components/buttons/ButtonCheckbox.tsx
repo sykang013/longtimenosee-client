@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, Pressable } from 'react-native';
+import { Pressable } from 'react-native';
 import styled from 'styled-components/native';
 import CheckTrue from '@/assets/icons/CheckTrue';
 import CheckFalseGray from '@/assets/icons/CheckFalseGray';
@@ -25,11 +25,11 @@ const ButtonCheckbox = ({ color = 'gray', contents, isDetailed = false }: Button
   return (
     <StButtonCheckboxContainer>
       <StButtonCheckbox>
-        <TouchableOpacity activeOpacity={1} onPress={toggleCheckBox}>
+        <Pressable onPress={toggleCheckBox}>
           {isChecked && <CheckTrue />}
           {!isChecked && color === 'gray' && <CheckFalseGray />}
           {!isChecked && color === 'primary' && <CheckFalsePrimary />}
-        </TouchableOpacity>
+        </Pressable>
         <StText color={color}>{contents}</StText>
       </StButtonCheckbox>
       {isDetailed && (
