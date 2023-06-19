@@ -11,7 +11,7 @@ const EmailAuthenticationScreen = () => {
         &#39;인증하기&#39; 버튼을 눌러주세요.
       </StText>
       <ButtonMain>
-        <ButtonText style={label.Small}>확인</ButtonText>
+        <ButtonText style={label.Small}>인증하기</ButtonText>
       </ButtonMain>
     </StContainer>
   );
