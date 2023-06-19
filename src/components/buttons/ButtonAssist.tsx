@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { paragraph } from '@/assets/themes';
-import { View } from 'react-native';
+import { caption } from '@/assets/themes';
 
 interface ButtonAssistProps {
   title: string;
@@ -11,9 +10,7 @@ interface ButtonAssistProps {
 const ButtonAssist = ({ title, onPress }: ButtonAssistProps) => {
   return (
     <StButtonAssist onPress={onPress}>
-      <View style={{ borderBottomWidth: 1 }}>
-        <StText>{title}</StText>
-      </View>
+      <StText>{title}</StText>
     </StButtonAssist>
   );
 };
@@ -25,6 +22,5 @@ const StButtonAssist = styled.Pressable`
 `;
 
 const StText = styled.Text`
-  ${paragraph.Small}
-  line-height: 14px;
+  ${caption.Small}
 `;
