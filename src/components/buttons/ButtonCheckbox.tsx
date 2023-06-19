@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, Pressable } from 'react-native';
 import styled from 'styled-components/native';
 import CheckTrue from '@/assets/icons/CheckTrue';
 import CheckFalseGray from '@/assets/icons/CheckFalseGray';
@@ -33,9 +33,9 @@ const ButtonCheckbox = ({ color = 'gray', contents, isDetailed = false }: Button
         <StText color={color}>{contents}</StText>
       </StButtonCheckbox>
       {isDetailed && (
-        <StButtonDetails>
+        <Pressable>
           <StTextDetails>보기</StTextDetails>
-        </StButtonDetails>
+        </Pressable>
       )}
     </StButtonCheckboxContainer>
   );
@@ -61,10 +61,6 @@ const StButtonCheckbox = styled.View`
 const StText = styled.Text<StTextProps>`
   color: ${(props) => (props.color === 'primary' ? globalColor.primary : globalColor.black)};
   ${paragraph.XS};
-`;
-
-const StButtonDetails = styled.Pressable`
-  /* justify-items: flex-end; */
 `;
 
 const StTextDetails = styled.Text`
