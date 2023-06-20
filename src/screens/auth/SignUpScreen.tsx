@@ -10,6 +10,23 @@ const SignUpScreen = () => {
   const [isPasswordActive, setIsPasswordActive] = useState(false);
   const [isPasswordConfirmActive, setIsPasswordConfirmActive] = useState(false);
 
+  const [isAgeChecked, setIsAgeChecked] = useState(false);
+  const [isUseChecked, setIsUseChecked] = useState(false);
+  const [isPersonalChecked, setIsPersonalChecked] = useState(false);
+
+  const isAllChecked = isAgeChecked && isUseChecked && isPersonalChecked;
+  const toggleIsAllChecked = () => {
+    if (isAllChecked) {
+      setIsAgeChecked(false);
+      setIsUseChecked(false);
+      setIsPersonalChecked(false);
+    } else {
+      setIsAgeChecked(true);
+      setIsUseChecked(true);
+      setIsPersonalChecked(true);
+    }
+  };
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <StContainer>
@@ -53,10 +70,35 @@ const SignUpScreen = () => {
           </StInfoText>
         </StInputsContainer>
         <View>
-          <ButtonCheckbox color="primary" contents="전체 동의" />
-          <ButtonCheckbox contents="저는 14세 이상입니다." />
-          <ButtonCheckbox contents="[필수] 이용약관 동의" isDetailed={true} />
-          <ButtonCheckbox contents="[필수] 개인정보 처리 방침 동의" isDetailed={true} />
+          <ButtonCheckbox
+            color="primary"
+            contents="전체 동의"
+            isChecked={isAllChecked}
+            toggleCheckBox={toggleIsAllChecked}
+          />
+          <ButtonCheckbox
+            contents="저는 14세 이상입니다."
+            isChecked={isAgeChecked}
+            toggleCheckBox={() => {
+              setIsAgeChecked((prev) => !prev);
+            }}
+          />
+          <ButtonCheckbox
+            contents="[필수] 이용약관 동의"
+            isDetailed={true}
+            isChecked={isUseChecked}
+            toggleCheckBox={() => {
+              setIsUseChecked((prev) => !prev);
+            }}
+          />
+          <ButtonCheckbox
+            contents="[필수] 개인정보 처리 방침 동의"
+            isDetailed={true}
+            isChecked={isPersonalChecked}
+            toggleCheckBox={() => {
+              setIsPersonalChecked((prev) => !prev);
+            }}
+          />
         </View>
         <ButtonMain>
           <ButtonText style={label.Small}>확인</ButtonText>

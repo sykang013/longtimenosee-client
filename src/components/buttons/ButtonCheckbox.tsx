@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Pressable } from 'react-native';
 import styled from 'styled-components/native';
 import CheckTrue from '@/assets/icons/CheckTrue';
@@ -13,15 +13,17 @@ interface StTextProps {
 interface ButtonCheckBoxProps extends StTextProps {
   contents: string;
   isDetailed?: boolean;
+  isChecked: boolean;
+  toggleCheckBox: () => void;
 }
 
-const ButtonCheckbox = ({ color = 'gray', contents, isDetailed = false }: ButtonCheckBoxProps) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const toggleCheckBox = () => {
-    setIsChecked((prev) => !prev);
-  };
-
+const ButtonCheckbox = ({
+  color = 'gray',
+  contents,
+  isDetailed = false,
+  isChecked,
+  toggleCheckBox,
+}: ButtonCheckBoxProps) => {
   return (
     <StButtonCheckboxContainer>
       <StButtonCheckbox>
