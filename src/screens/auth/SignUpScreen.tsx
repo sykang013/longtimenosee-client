@@ -126,7 +126,16 @@ const SignUpScreen = () => {
             }}
           />
         </View>
-        <ButtonMain>
+        <ButtonMain
+          backgroundColor={
+            isEmailValid && isPasswordValid && isPasswordConfirmValid && isAllChecked
+              ? globalColor.primary
+              : globalColor.blue[200]
+          }
+          disabled={
+            isEmailValid && isPasswordValid && isPasswordConfirmValid && isAllChecked ? false : true
+          }
+        >
           <ButtonText style={label.Small}>확인</ButtonText>
         </ButtonMain>
       </StContainer>
