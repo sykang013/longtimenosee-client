@@ -10,6 +10,16 @@ const SignUpScreen = () => {
   const [isPasswordActive, setIsPasswordActive] = useState(false);
   const [isPasswordConfirmActive, setIsPasswordConfirmActive] = useState(false);
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
+
+  const isEmailValid = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/.test(email);
+  const isPasswordValid = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~!@#$%^&*])[A-Za-z\d@$!%*#?&]{8,20}$/.test(
+    password
+  );
+  const isPasswordConfirmValid = passwordConfirm === password ? true : false;
+
   const [isAgeChecked, setIsAgeChecked] = useState(false);
   const [isUseChecked, setIsUseChecked] = useState(false);
   const [isPersonalChecked, setIsPersonalChecked] = useState(false);
@@ -38,8 +48,12 @@ const SignUpScreen = () => {
               isActive={isEmailActive}
               onFocus={() => setIsEmailActive(true)}
               onBlur={() => setIsEmailActive(false)}
+              value={email}
+              onChangeText={(text: string) => setEmail(text)}
             />
-            <StInputInfoText>*이메일 형식이 올바르지 않습니다.</StInputInfoText>
+            {!isEmailValid && email.length > 0 && (
+              <StInputInfoText>*이메일 형식이 올바르지 않습니다.</StInputInfoText>
+            )}
           </StInputContainer>
           <StInputContainer>
             <InputAuth
@@ -48,10 +62,16 @@ const SignUpScreen = () => {
               isActive={isPasswordActive}
               onFocus={() => setIsPasswordActive(true)}
               onBlur={() => setIsPasswordActive(false)}
+              value={password}
+              onChangeText={(text: string) => setPassword(text)}
+              secureTextEntry={true}
+              textContentType="oneTimeCode"
             />
-            <StInputInfoText>
-              *비밀번호는 영문, 숫자, 특수문자 중 2가지 이상 조합 및 8자리 이상이어야 합니다.
-            </StInputInfoText>
+            {!isPasswordValid && password.length > 0 && (
+              <StInputInfoText>
+                *비밀번호는 영문, 숫자, 특수문자 포함 8자리 이상, 20자리 이내여야 합니다.
+              </StInputInfoText>
+            )}
           </StInputContainer>
           <StInputContainer>
             <InputAuth
@@ -60,8 +80,14 @@ const SignUpScreen = () => {
               isActive={isPasswordConfirmActive}
               onFocus={() => setIsPasswordConfirmActive(true)}
               onBlur={() => setIsPasswordConfirmActive(false)}
+              value={passwordConfirm}
+              onChangeText={(text: string) => setPasswordConfirm(text)}
+              secureTextEntry={true}
+              textContentType="oneTimeCode"
             />
-            <StInputInfoText>*비밀번호가 일치하지 않습니다.</StInputInfoText>
+            {!isPasswordConfirmValid && passwordConfirm.length > 0 && (
+              <StInputInfoText>*비밀번호가 일치하지 않습니다.</StInputInfoText>
+            )}
           </StInputContainer>
           <StInfoText>
             가입 시 다른 기기에서도 사용 가능하며,

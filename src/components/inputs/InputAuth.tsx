@@ -10,7 +10,8 @@ interface InputAuthProps extends TextInputProps {
   // input option
   value?: string;
   isActive?: boolean;
-  onChangeText?: () => void;
+  // eslint-disable-next-line no-unused-vars
+  onChangeText?: (text: string) => void;
   placeholder: string;
   secureTextEntry?: boolean;
 }
