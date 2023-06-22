@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import { ButtonAssist, ButtonMain, ButtonText } from '@/components/buttons';
+import { ButtonAssist, ButtonMain } from '@/components/buttons';
 import { InputAuth } from '@/components/inputs';
-import { label, light, paragraph } from '@/assets/themes';
+import { light } from '@/assets/themes';
 import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 const SignInScreen = () => {
@@ -14,14 +14,12 @@ const SignInScreen = () => {
       <StContainer>
         <StInputContainer>
           <InputAuth
-            style={paragraph.Small}
             placeholder="이메일"
             isActive={emailActive}
             onFocus={() => setEmailActive(true)}
             onBlur={() => setEmailActive(false)}
           />
           <InputAuth
-            style={paragraph.Small}
             placeholder="비밀번호"
             secureTextEntry={true}
             isActive={passwordActive}
@@ -29,8 +27,12 @@ const SignInScreen = () => {
             onBlur={() => setPasswordActive(false)}
           />
         </StInputContainer>
-        <ButtonMain style={{ marginTop: 28, marginBottom: 16 }}>
-          <ButtonText style={label.Small}>확인</ButtonText>
+        <ButtonMain
+          buttonState="ActivePrimary"
+          width={312}
+          style={{ marginTop: 28, marginBottom: 16 }}
+        >
+          확인
         </ButtonMain>
         <ButtonAssist title="비밀번호 찾기" />
       </StContainer>

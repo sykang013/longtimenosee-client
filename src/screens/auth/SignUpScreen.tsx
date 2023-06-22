@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { InputAuth } from '@/components/inputs';
 import { Keyboard, TouchableWithoutFeedback, View } from 'react-native';
-import { globalColor, paragraph, light, label } from '@/assets/themes';
-import { ButtonCheckbox, ButtonMain, ButtonText } from '@/components/buttons';
+import { globalColor, paragraph, light } from '@/assets/themes';
+import { ButtonCheckbox, ButtonMain } from '@/components/buttons';
 
 const SignUpScreen = () => {
   const [isEmailActive, setIsEmailActive] = useState(false);
@@ -16,7 +16,6 @@ const SignUpScreen = () => {
         <StInputsContainer>
           <StInputContainer>
             <InputAuth
-              style={paragraph.Small}
               placeholder="이메일을 입력해 주세요."
               isActive={isEmailActive}
               onFocus={() => setIsEmailActive(true)}
@@ -26,7 +25,6 @@ const SignUpScreen = () => {
           </StInputContainer>
           <StInputContainer>
             <InputAuth
-              style={paragraph.Small}
               placeholder="비밀번호를 입력해 주세요."
               isActive={isPasswordActive}
               onFocus={() => setIsPasswordActive(true)}
@@ -38,7 +36,6 @@ const SignUpScreen = () => {
           </StInputContainer>
           <StInputContainer>
             <InputAuth
-              style={paragraph.Small}
               placeholder="비밀번호를 다시 입력해 주세요."
               isActive={isPasswordConfirmActive}
               onFocus={() => setIsPasswordConfirmActive(true)}
@@ -58,8 +55,8 @@ const SignUpScreen = () => {
           <ButtonCheckbox contents="[필수] 이용약관 동의" isDetailed={true} />
           <ButtonCheckbox contents="[필수] 개인정보 처리 방침 동의" isDetailed={true} />
         </View>
-        <ButtonMain>
-          <ButtonText style={label.Small}>확인</ButtonText>
+        <ButtonMain buttonState="ActivePrimary" width={312}>
+          확인
         </ButtonMain>
       </StContainer>
     </TouchableWithoutFeedback>
