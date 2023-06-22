@@ -1,5 +1,3 @@
-import { StyleSheet } from 'react-native';
-
 const fontFamily = 'Pretendard-Bold';
 const fontSizeXXXL = 50.517;
 const fontSizeXXL = 37.897;
@@ -12,55 +10,55 @@ const fontSizeXXS = 10;
 const letterSpacing = 0;
 const lineHeight = 1.4; // 상대적인 값으로 설정 (예: 1.4는 140%를 의미)
 
-const heading = StyleSheet.create({
+const heading = {
   XXXL: {
     fontFamily: fontFamily,
     fontSize: fontSizeXXXL,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeXXXL,
+    lineHeight: `${lineHeight * fontSizeXXXL}px`,
   },
   XXL: {
     fontFamily: fontFamily,
     fontSize: fontSizeXXL,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeXXL,
+    lineHeight: `${lineHeight * fontSizeXXL}px`,
   },
   XL: {
     fontFamily: fontFamily,
     fontSize: fontSizeXL,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeXL,
+    lineHeight: `${lineHeight * fontSizeXL}px`,
   },
   Large: {
     fontFamily: fontFamily,
     fontSize: fontSizeLarge,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeLarge,
+    lineHeight: `${lineHeight * fontSizeLarge}px`,
   },
   Medium: {
     fontFamily: fontFamily,
     fontSize: fontSizeMedium,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeMedium,
+    lineHeight: `${lineHeight * fontSizeMedium}px`,
   },
   Small: {
     fontFamily: fontFamily,
     fontSize: fontSizeSmall,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeSmall,
+    lineHeight: `${lineHeight * fontSizeSmall}px`,
   },
   XS: {
     fontFamily: fontFamily,
     fontSize: fontSizeXS,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeXS,
+    lineHeight: `${lineHeight * fontSizeXS}px`,
   },
   XXS: {
     fontFamily: fontFamily,
     fontSize: fontSizeXXS,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeXXS,
+    lineHeight: `${lineHeight * fontSizeXXS}px`,
   },
-});
+};
 
 export default heading;
