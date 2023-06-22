@@ -18,10 +18,10 @@ const AuthScreen = ({ navigation }: AuthScreenProps) => {
       <StButtonContainer>
         <StButtonInnerContainer>
           <StButton>
-            <StButtonText style={label.Small}>게스트로 이용</StButtonText>
+            <StButtonText>게스트로 이용</StButtonText>
           </StButton>
           <StButton onPress={() => navigation.navigate('SignInScreen')}>
-            <StButtonText style={label.Small}>로그인</StButtonText>
+            <StButtonText>로그인</StButtonText>
           </StButton>
         </StButtonInnerContainer>
         <StKaKaoButton>
@@ -81,6 +81,7 @@ const StButton = styled.Pressable`
 
 const StButtonText = styled.Text`
   color: ${light.contents.contentMain};
+  ${label.Small}
 `;
 
 const StKaKaoButton = styled.Pressable`

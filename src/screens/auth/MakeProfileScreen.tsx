@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import { light, label } from '@/assets/themes';
+import { light } from '@/assets/themes';
 import InputProfile from '@/components/inputs/InputProfile';
-import { ButtonMain, ButtonText } from '@/components/buttons';
+import { ButtonMain } from '@/components/buttons';
 
 const MakeProfileScreen = () => {
   const [isNicknameActive, setIsNicknameActive] = useState(false);
@@ -17,9 +17,7 @@ const MakeProfileScreen = () => {
         label="닉네임"
         maxLength={15}
       />
-      <ButtonMain>
-        <ButtonText style={label.Small}>확인</ButtonText>
-      </ButtonMain>
+      <ButtonMain width={312}>확인</ButtonMain>
     </StContainer>
   );
 };

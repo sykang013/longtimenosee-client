@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInputProps } from 'react-native';
 import styled from 'styled-components/native';
-import { light } from '@/assets/themes';
+import { light, paragraph } from '@/assets/themes';
 
 interface InputAuthProps extends TextInputProps {
   // style
@@ -48,6 +48,7 @@ const StInput = styled.TextInput<InputAuthProps>`
   border-bottom-width: 1px;
   padding: 0;
   margin: 0;
+  ${paragraph.Small}
 `;
 
 export default InputAuth;
