@@ -1,7 +1,7 @@
-import React from 'react';
-import { PressableProps } from 'react-native';
+import React, { ReactNode } from 'react';
+import { PressableProps, TextProps } from 'react-native';
 import styled from 'styled-components/native';
-import globalColor from '@/assets/themes/globalColor';
+import { label, light, globalColor } from '@/assets/themes';
 
 interface ButtonMainProps extends PressableProps {
   backgroundColor?: string;
@@ -9,14 +9,23 @@ interface ButtonMainProps extends PressableProps {
   height?: number;
   borderRadius?: number;
   onPress?: () => void;
+
+  children?: ReactNode;
+  textColor?: string;
+}
+
+interface ButtonTextProps extends TextProps {
+  textColor?: string;
 }
 
 const ButtonMain = ({
   backgroundColor = globalColor.primary,
-  width = 312,
+  width = 328,
   height = 44,
   borderRadius = 4,
   onPress,
+  children = '텍스트',
+  textColor = light.background,
   ...rest
 }: ButtonMainProps) => {
   return (
@@ -27,7 +36,9 @@ const ButtonMain = ({
       borderRadius={borderRadius}
       onPress={onPress}
       {...rest}
-    ></StButton>
+    >
+      <StButtonText textColor={textColor}>{children}</StButtonText>
+    </StButton>
   );
 };
 
@@ -39,6 +50,11 @@ const StButton = styled.Pressable<ButtonMainProps>`
   height: ${(props) => props.height}px;
   border-radius: ${(props) => props.borderRadius}px;
   background-color: ${(props) => props.backgroundColor};
+`;
+
+const StButtonText = styled.Text<ButtonTextProps>`
+  color: ${(props) => props.textColor};
+  ${label.Small};
 `;
 
 export default ButtonMain;
