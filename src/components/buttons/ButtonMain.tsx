@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import { label, light, globalColor } from '@/assets/themes';
 
 interface ButtonMainProps extends PressableProps {
+  buttonState?: string;
   backgroundColor?: string;
   width?: number;
   height?: number;
@@ -19,17 +20,41 @@ interface ButtonTextProps extends TextProps {
 }
 
 const ButtonMain = ({
-  backgroundColor = globalColor.primary,
+  buttonState,
+  backgroundColor,
   width = 328,
   height = 44,
   borderRadius = 4,
   onPress,
   children = '텍스트',
-  textColor = light.background,
+  textColor,
   ...rest
 }: ButtonMainProps) => {
+  switch (buttonState) {
+    case 'InActivePrimary':
+      backgroundColor = globalColor.blue[200];
+      textColor = light.background;
+      break;
+    case 'ActivePrimary':
+      backgroundColor = globalColor.primary;
+      textColor = light.background;
+      break;
+    case 'Line':
+      backgroundColor = light.background;
+      textColor = light.contents.contentMain;
+      break;
+    case 'BW':
+      backgroundColor = light.contents.contentMain;
+      textColor = light.background;
+      break;
+    default:
+      backgroundColor = globalColor.primary;
+      textColor = light.background;
+      break;
+  }
   return (
     <StButton
+      buttonState={buttonState}
       backgroundColor={backgroundColor}
       width={width}
       height={height}

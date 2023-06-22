@@ -17,7 +17,9 @@ const MakeProfileScreen = () => {
         label="닉네임"
         maxLength={15}
       />
-      <ButtonMain width={312}>확인</ButtonMain>
+      <ButtonMain buttonState="ActivePrimary" width={312}>
+        확인
+      </ButtonMain>
     </StContainer>
   );
 };

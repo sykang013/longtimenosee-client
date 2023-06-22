@@ -55,7 +55,9 @@ const SignUpScreen = () => {
           <ButtonCheckbox contents="[필수] 이용약관 동의" isDetailed={true} />
           <ButtonCheckbox contents="[필수] 개인정보 처리 방침 동의" isDetailed={true} />
         </View>
-        <ButtonMain width={312}>확인</ButtonMain>
+        <ButtonMain buttonState="ActivePrimary" width={312}>
+          확인
+        </ButtonMain>
       </StContainer>
     </TouchableWithoutFeedback>
   );

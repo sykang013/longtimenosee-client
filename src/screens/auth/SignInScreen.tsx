@@ -27,7 +27,11 @@ const SignInScreen = () => {
             onBlur={() => setPasswordActive(false)}
           />
         </StInputContainer>
-        <ButtonMain width={312} style={{ marginTop: 28, marginBottom: 16 }}>
+        <ButtonMain
+          buttonState="ActivePrimary"
+          width={312}
+          style={{ marginTop: 28, marginBottom: 16 }}
+        >
           확인
         </ButtonMain>
         <ButtonAssist title="비밀번호 찾기" />
