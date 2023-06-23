@@ -1,5 +1,3 @@
-import { StyleSheet } from 'react-native';
-
 const fontFamily = 'Pretendard-Regular';
 const fontSizeXS = 12;
 const fontSizeXXS = 10;
@@ -8,28 +6,28 @@ const letterSpacing = 0;
 const lineHeight = 1.0; //100%
 const textDecoration = 'underline';
 
-const caption = StyleSheet.create({
+const caption = {
   Small: {
     fontFamily: fontFamily,
     fontSize: fontSizeSmall,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeSmall,
+    lineHeight: `${lineHeight * fontSizeSmall}px`,
     textDecorationLine: textDecoration,
   },
   XS: {
     fontFamily: fontFamily,
     fontSize: fontSizeXS,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeXS,
+    lineHeight: `${lineHeight * fontSizeXS}px`,
     textDecorationLine: textDecoration,
   },
   XXS: {
     fontFamily: fontFamily,
     fontSize: fontSizeXXS,
     letterSpacing: letterSpacing,
-    lineHeight: lineHeight * fontSizeXXS,
+    lineHeight: `${lineHeight * fontSizeXXS}px`,
     textDecorationLine: textDecoration,
   },
-});
+};
 
 export default caption;
