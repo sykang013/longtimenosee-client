@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* LongTimeNoSeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* LongTimeNoSeeTests.m */; };
-		0AA68DD1E581F066EA835639 /* libPods-LongTimeNoSee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E0C5FC3272AE5DF9005B3 /* libPods-LongTimeNoSee.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		39F0DDF26FED4C48AEC9F3EF /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8359FA6AB22A497EAE6EC543 /* Pretendard-Bold.otf */; };
 		553C6AD7F68C40B691EC4FE5 /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = C57824A008D240A4BAF24A19 /* GmarketSansLight.otf */; };
+		657E100885935C58C5CB4B31 /* libPods-LongTimeNoSee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96185720734AD2FEB2B28E63 /* libPods-LongTimeNoSee.a */; };
 		79E98C809EB64282ADE50786 /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8ED2D60CC7724BEAAF0C7C5F /* GmarketSansBold.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		971306E4DAEE4304983D1F8E /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1652C032B5C4076AACD66F0 /* Pretendard-SemiBold.otf */; };
 		AEC4277A417A496A9A0E357E /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FAC660BA7EB2468486E49B4F /* Pretendard-Regular.otf */; };
-		B32F57C366C77F57877F2EA4 /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54DED80687016D61DB552642 /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a */; };
 		CD2FE14E6DA04002936C0E72 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6648E4A4F43A4113BD29503C /* GmarketSansMedium.otf */; };
+		F0FCAFB68584EA9DC16CB86C /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CF0A6C0271A558A3240342 /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,24 +36,24 @@
 		00E356EE1AD99517003FC87E /* LongTimeNoSeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LongTimeNoSeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* LongTimeNoSeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LongTimeNoSeeTests.m; sourceTree = "<group>"; };
+		0531B7742E4F639D58BAF957 /* Pods-LongTimeNoSee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongTimeNoSee.release.xcconfig"; path = "Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* LongTimeNoSee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LongTimeNoSee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = LongTimeNoSee/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = LongTimeNoSee/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = LongTimeNoSee/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LongTimeNoSee/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LongTimeNoSee/main.m; sourceTree = "<group>"; };
-		25A18CA0037D569E90FC30B5 /* Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig"; path = "Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig"; sourceTree = "<group>"; };
-		4BDE44378BAB272053C46152 /* Pods-LongTimeNoSee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongTimeNoSee.release.xcconfig"; path = "Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee.release.xcconfig"; sourceTree = "<group>"; };
-		4C1684FCCCC90437C7826C5D /* Pods-LongTimeNoSee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongTimeNoSee.debug.xcconfig"; path = "Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee.debug.xcconfig"; sourceTree = "<group>"; };
-		54DED80687016D61DB552642 /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LongTimeNoSee-LongTimeNoSeeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		144A14EAE5E9FDA9CCACD87B /* Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig"; path = "Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig"; sourceTree = "<group>"; };
 		6648E4A4F43A4113BD29503C /* GmarketSansMedium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GmarketSansMedium.otf; path = ../assets/fonts/GmarketSansMedium.otf; sourceTree = "<group>"; };
+		78930B1734B61CCB3747EA44 /* Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig"; path = "Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LongTimeNoSee/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		826F672E56351D1EA6A5A10C /* Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig"; path = "Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8359FA6AB22A497EAE6EC543 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Bold.otf"; path = "../assets/fonts/Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		86CF0A6C0271A558A3240342 /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LongTimeNoSee-LongTimeNoSeeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED2D60CC7724BEAAF0C7C5F /* GmarketSansBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GmarketSansBold.otf; path = ../assets/fonts/GmarketSansBold.otf; sourceTree = "<group>"; };
+		96185720734AD2FEB2B28E63 /* libPods-LongTimeNoSee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LongTimeNoSee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98826DA875F0876369AEEC63 /* Pods-LongTimeNoSee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LongTimeNoSee.debug.xcconfig"; path = "Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee.debug.xcconfig"; sourceTree = "<group>"; };
 		C1652C032B5C4076AACD66F0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-SemiBold.otf"; path = "../assets/fonts/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		C57824A008D240A4BAF24A19 /* GmarketSansLight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GmarketSansLight.otf; path = ../assets/fonts/GmarketSansLight.otf; sourceTree = "<group>"; };
-		DC6E0C5FC3272AE5DF9005B3 /* libPods-LongTimeNoSee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LongTimeNoSee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC660BA7EB2468486E49B4F /* Pretendard-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Pretendard-Regular.otf"; path = "../assets/fonts/Pretendard-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B32F57C366C77F57877F2EA4 /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a in Frameworks */,
+				F0FCAFB68584EA9DC16CB86C /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AA68DD1E581F066EA835639 /* libPods-LongTimeNoSee.a in Frameworks */,
+				657E100885935C58C5CB4B31 /* libPods-LongTimeNoSee.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				DC6E0C5FC3272AE5DF9005B3 /* libPods-LongTimeNoSee.a */,
-				54DED80687016D61DB552642 /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a */,
+				96185720734AD2FEB2B28E63 /* libPods-LongTimeNoSee.a */,
+				86CF0A6C0271A558A3240342 /* libPods-LongTimeNoSee-LongTimeNoSeeTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,10 +167,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4C1684FCCCC90437C7826C5D /* Pods-LongTimeNoSee.debug.xcconfig */,
-				4BDE44378BAB272053C46152 /* Pods-LongTimeNoSee.release.xcconfig */,
-				826F672E56351D1EA6A5A10C /* Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig */,
-				25A18CA0037D569E90FC30B5 /* Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig */,
+				98826DA875F0876369AEEC63 /* Pods-LongTimeNoSee.debug.xcconfig */,
+				0531B7742E4F639D58BAF957 /* Pods-LongTimeNoSee.release.xcconfig */,
+				78930B1734B61CCB3747EA44 /* Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig */,
+				144A14EAE5E9FDA9CCACD87B /* Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -182,12 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "LongTimeNoSeeTests" */;
 			buildPhases = (
-				1E63FA83DB8461D1BC137D7E /* [CP] Check Pods Manifest.lock */,
+				2411CD300896A1D275E9E145 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				0791FAD6729FFCA9AB389F44 /* [CP] Embed Pods Frameworks */,
-				8F084682E1B71B3E8615603F /* [CP] Copy Pods Resources */,
+				4B87CB7AA5532AA64FAD8D90 /* [CP] Embed Pods Frameworks */,
+				5B67AF4ACC70370BC02294E1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,14 +203,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "LongTimeNoSee" */;
 			buildPhases = (
-				5945DE0D1E576069790A8DA4 /* [CP] Check Pods Manifest.lock */,
+				11FC58853C2F9AE176B40C77 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				7E0E7D8D1F8CCEE33218F5E2 /* [CP] Embed Pods Frameworks */,
-				85D41096C929DAC472CBA0D0 /* [CP] Copy Pods Resources */,
+				1D1DD3DBF2269F272423D15E /* [CP] Embed Pods Frameworks */,
+				F0F8550FB9728747FD8EE3A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,46 +299,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		0791FAD6729FFCA9AB389F44 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1E63FA83DB8461D1BC137D7E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LongTimeNoSee-LongTimeNoSeeTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5945DE0D1E576069790A8DA4 /* [CP] Check Pods Manifest.lock */ = {
+		11FC58853C2F9AE176B40C77 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,7 +321,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E0E7D8D1F8CCEE33218F5E2 /* [CP] Embed Pods Frameworks */ = {
+		1D1DD3DBF2269F272423D15E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -377,24 +338,46 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		85D41096C929DAC472CBA0D0 /* [CP] Copy Pods Resources */ = {
+		2411CD300896A1D275E9E145 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LongTimeNoSee-LongTimeNoSeeTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8F084682E1B71B3E8615603F /* [CP] Copy Pods Resources */ = {
+		4B87CB7AA5532AA64FAD8D90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B67AF4ACC70370BC02294E1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,6 +392,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee-LongTimeNoSeeTests/Pods-LongTimeNoSee-LongTimeNoSeeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0F8550FB9728747FD8EE3A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LongTimeNoSee/Pods-LongTimeNoSee-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -463,7 +463,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 826F672E56351D1EA6A5A10C /* Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig */;
+			baseConfigurationReference = 78930B1734B61CCB3747EA44 /* Pods-LongTimeNoSee-LongTimeNoSeeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -490,7 +490,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25A18CA0037D569E90FC30B5 /* Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig */;
+			baseConfigurationReference = 144A14EAE5E9FDA9CCACD87B /* Pods-LongTimeNoSee-LongTimeNoSeeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -514,7 +514,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C1684FCCCC90437C7826C5D /* Pods-LongTimeNoSee.debug.xcconfig */;
+			baseConfigurationReference = 98826DA875F0876369AEEC63 /* Pods-LongTimeNoSee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -541,7 +541,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BDE44378BAB272053C46152 /* Pods-LongTimeNoSee.release.xcconfig */;
+			baseConfigurationReference = 0531B7742E4F639D58BAF957 /* Pods-LongTimeNoSee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
