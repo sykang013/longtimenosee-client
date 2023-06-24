@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { InputAuth } from '@/components/inputs';
-import { Keyboard, TouchableWithoutFeedback, View } from 'react-native';
+import { Alert, Keyboard, TouchableWithoutFeedback, View } from 'react-native';
 import { globalColor, paragraph, light } from '@/assets/themes';
 import { ButtonCheckbox, ButtonMain } from '@/components/buttons';
+import { signUp } from '@/apis/auth';
+import { RootStackParamList } from '../Navigation';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-const SignUpScreen = () => {
+type SignUpScreenProps = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'SignUpScreen'>;
+};
+
+const SignUpScreen = ({ navigation }: SignUpScreenProps) => {
   const [isEmailActive, setIsEmailActive] = useState(false);
   const [isPasswordActive, setIsPasswordActive] = useState(false);
   const [isPasswordConfirmActive, setIsPasswordConfirmActive] = useState(false);
@@ -34,6 +41,15 @@ const SignUpScreen = () => {
       setIsAgeChecked(true);
       setIsUseChecked(true);
       setIsPersonalChecked(true);
+    }
+  };
+
+  const signUpHandler = async () => {
+    try {
+      await signUp({ email, password });
+      navigation.navigate('EmailAuthenticationScreen');
+    } catch (error: unknown) {
+      Alert.alert('에러', `${error}`, [{ text: '확인' }]);
     }
   };
 
@@ -127,12 +143,13 @@ const SignUpScreen = () => {
           buttonState={
             isEmailValid && isPasswordValid && isPasswordConfirmValid && isAllChecked
               ? 'ActivePrimary'
-              : 'InactivePrimary'
+              : 'InActivePrimary'
           }
           disabled={
             isEmailValid && isPasswordValid && isPasswordConfirmValid && isAllChecked ? false : true
           }
           width={312}
+          onPress={signUpHandler}
         >
           확인
         </ButtonMain>

@@ -2,14 +2,13 @@ import React, { ReactNode } from 'react';
 import { PressableProps, TextProps } from 'react-native';
 import styled from 'styled-components/native';
 import { label, light, globalColor } from '@/assets/themes';
-
 interface ButtonMainProps extends PressableProps {
   buttonState?: string;
   backgroundColor?: string;
   width?: number;
   height?: number;
   borderRadius?: number;
-  onPress?: () => void;
+  onPress?: (() => void) | (() => Promise<void>);
 
   children?: ReactNode;
   textColor?: string;
