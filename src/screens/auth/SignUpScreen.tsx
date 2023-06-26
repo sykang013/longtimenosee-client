@@ -22,7 +22,7 @@ const SignUpScreen = ({ navigation }: SignUpScreenProps) => {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
 
-  const isEmailValid = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/.test(email);
+  const isEmailValid = /^[a-z0-9-_.]+@[a-z]+\.[a-z]{2,3}$/.test(email);
   const isPasswordValid = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~!@#$%^&*])[A-Za-z\d@$!%*#?&]{8,20}$/.test(
     password
   );
