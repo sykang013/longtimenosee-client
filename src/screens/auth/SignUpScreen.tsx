@@ -107,7 +107,7 @@ const SignUpScreen = ({ navigation }: ScreenProps<'SignUpScreen'>) => {
         </StInputsContainer>
         <View>
           <ButtonCheckbox
-            color="primary"
+            textColor="primary"
             contents="전체 동의"
             isChecked={isAllChecked}
             toggleCheckBox={toggleIsAllChecked}
