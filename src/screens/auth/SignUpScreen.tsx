@@ -5,15 +5,10 @@ import { Alert, Keyboard, TouchableWithoutFeedback, View } from 'react-native';
 import { globalColor, paragraph, light } from '@/assets/themes';
 import { ButtonCheckbox, ButtonMain } from '@/components/buttons';
 import { signUp } from '@/apis/auth';
-import { RootStackParamList } from '../Navigation';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { CustomError } from '@/types/error';
+import { ScreenProps } from '@/types';
 
-type SignUpScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'SignUpScreen'>;
-};
-
-const SignUpScreen = ({ navigation }: SignUpScreenProps) => {
+const SignUpScreen = ({ navigation }: ScreenProps<'SignUpScreen'>) => {
   const [isEmailActive, setIsEmailActive] = useState(false);
   const [isPasswordActive, setIsPasswordActive] = useState(false);
   const [isPasswordConfirmActive, setIsPasswordConfirmActive] = useState(false);

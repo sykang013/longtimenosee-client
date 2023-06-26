@@ -4,16 +4,13 @@ import { light, paragraph } from '@/assets/themes';
 import { ButtonMain } from '@/components/buttons';
 import { Alert } from 'react-native';
 import { CustomError } from '@/types/error';
-import { RootStackParamList } from '../Navigation';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { verifyUser } from '@/apis/auth';
+import { ScreenProps } from '@/types';
 
-type EmailAuthenticationScreenProps = NativeStackScreenProps<
-  RootStackParamList,
-  'EmailAuthenticationScreen'
->;
-
-const EmailAuthenticationScreen = ({ navigation, route }: EmailAuthenticationScreenProps) => {
+const EmailAuthenticationScreen = ({
+  navigation,
+  route,
+}: ScreenProps<'EmailAuthenticationScreen'>) => {
   const verifyUserHandler = async () => {
     try {
       await verifyUser({ email: route.params.email });
