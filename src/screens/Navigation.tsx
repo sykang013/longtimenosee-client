@@ -13,7 +13,7 @@ export type RootStackParamList = {
   AuthScreen: undefined;
   SignInScreen: undefined;
   SignUpScreen: undefined;
-  EmailAuthenticationScreen: undefined;
+  EmailAuthenticationScreen: { email: string };
   MakeProfileScreen: undefined;
   // 필요에 따라 다른 화면들을 추가할 수 있습니다.
 };
