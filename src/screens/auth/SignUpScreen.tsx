@@ -7,6 +7,7 @@ import { ButtonCheckbox, ButtonMain } from '@/components/buttons';
 import { signUp } from '@/apis/auth';
 import { RootStackParamList } from '../Navigation';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { CustomError } from '@/types/error';
 
 type SignUpScreenProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'SignUpScreen'>;
@@ -47,9 +48,10 @@ const SignUpScreen = ({ navigation }: SignUpScreenProps) => {
   const signUpHandler = async () => {
     try {
       await signUp({ email, password });
-      navigation.navigate('EmailAuthenticationScreen');
-    } catch (error: unknown) {
-      Alert.alert('에러', `${error}`, [{ text: '확인' }]);
+      navigation.navigate('EmailAuthenticationScreen', { email: email });
+    } catch (error) {
+      const message = (error as CustomError).response?.data?.error?.message ?? error;
+      Alert.alert('에러', `${message}`, [{ text: '확인' }]);
     }
   };
 
