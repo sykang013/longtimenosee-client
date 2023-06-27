@@ -10,5 +10,5 @@ export const kakaoSignIn = () => {
 };
 
 export const signOut = () => {
-  return instance.post('/auth/logout');
+  return instance.post('/auth/signout');
 };
