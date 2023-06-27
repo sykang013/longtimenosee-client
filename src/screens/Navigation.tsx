@@ -6,6 +6,7 @@ import {
   SignUpScreen,
   EmailAuthenticationScreen,
   MakeProfileScreen,
+  CreateStartScreen,
 } from '@/screens/index';
 import { heading, light } from '@/assets/themes';
 
@@ -15,6 +16,7 @@ export type RootStackParamList = {
   SignUpScreen: undefined;
   EmailAuthenticationScreen: undefined;
   MakeProfileScreen: undefined;
+  CreateStartScreen: undefined;
   // 필요에 따라 다른 화면들을 추가할 수 있습니다.
 };
 
@@ -62,6 +64,18 @@ const Navigation = () => {
           headerTitleAlign: 'center',
           headerTintColor: light.contents.contentMain,
           headerTitleStyle: heading.Small,
+        }}
+      />
+      <Stack.Screen
+        name="CreateStartScreen"
+        component={CreateStartScreen}
+        options={{
+          title: '만들기',
+          headerTitleAlign: 'center',
+          headerTintColor: light.contents.contentMain,
+          headerTitleStyle: heading.Small,
+          headerShadowVisible: true,
+          //headerLeft: https://youtu.be/mJ3bGvy0WAY?t=1845
         }}
       />
       {/* 다른 화면들을 여기에 추가할 수 있습니다. */}

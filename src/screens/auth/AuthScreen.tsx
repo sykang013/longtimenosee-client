@@ -17,7 +17,7 @@ const AuthScreen = ({ navigation }: AuthScreenProps) => {
       <StSubTitle>당신을 위한 약속 도우미</StSubTitle>
       <StButtonContainer>
         <StButtonInnerContainer>
-          <StButton>
+          <StButton onPress={() => navigation.navigate('CreateStartScreen')}>
             <StButtonText>게스트로 이용</StButtonText>
           </StButton>
           <StButton onPress={() => navigation.navigate('SignInScreen')}>
