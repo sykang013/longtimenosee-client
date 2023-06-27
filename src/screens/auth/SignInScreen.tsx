@@ -6,7 +6,7 @@ import { globalColor, light } from '@/assets/themes';
 import { Alert, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { signIn } from '@/apis/auth';
 import { useSetRecoilState } from 'recoil';
-import { userInfo, userSignedIn } from '@/states/userState';
+import { userInfo } from '@/states/userState';
 import { CustomError, ScreenProps, UserInfo } from '@/types';
 
 const SignInScreen = ({ navigation }: ScreenProps<'SignInScreen'>) => {
@@ -15,7 +15,6 @@ const SignInScreen = ({ navigation }: ScreenProps<'SignInScreen'>) => {
   const [userEmail, setuserEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const setUserSignedIn = useSetRecoilState(userSignedIn);
   const setUserInfo = useSetRecoilState(userInfo);
 
   const signInHandler = async () => {
@@ -33,7 +32,6 @@ const SignInScreen = ({ navigation }: ScreenProps<'SignInScreen'>) => {
         return;
       }
       const response = await signIn({ email: userEmail, password: password });
-      setUserSignedIn(true);
       const { email, nickname } = response.data.data as UserInfo;
       setUserInfo({
         email: email,
