@@ -4,13 +4,8 @@ import { Image } from 'react-native';
 import { globalColor, label, light } from '@/assets/themes';
 import { ButtonAssist } from '@/components/buttons';
 import { ScreenProps } from '@/types';
-import { RootStackParamList } from '../Navigation';
 
 const AuthScreen = ({ navigation }: ScreenProps<'AuthScreen'>) => {
-  const navigator = (screen: keyof RootStackParamList) => {
-    navigation.navigate(screen);
-  };
-
   return (
     <StContainer>
       <StMainTitle>언제어디</StMainTitle>
@@ -20,14 +15,14 @@ const AuthScreen = ({ navigation }: ScreenProps<'AuthScreen'>) => {
           <StButton>
             <StButtonText>게스트로 이용</StButtonText>
           </StButton>
-          <StButton onPress={() => navigator('SignInScreen')}>
+          <StButton onPress={() => navigation.navigate('SignInScreen')}>
             <StButtonText>로그인</StButtonText>
           </StButton>
         </StButtonInnerContainer>
         <StKaKaoButton>
           <Image source={require('@/assets/images/kakao_login.png')} />
         </StKaKaoButton>
-        <ButtonAssist onPress={() => navigator('SignUpScreen')} title="회원가입" />
+        <ButtonAssist onPress={() => navigation.navigate('SignUpScreen')} title="회원가입" />
       </StButtonContainer>
     </StContainer>
   );
