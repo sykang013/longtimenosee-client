@@ -9,7 +9,7 @@ interface ButtonMainProps extends PressableProps {
   width?: number;
   height?: number;
   borderRadius?: number;
-  onPress?: () => void;
+  onPress?: (() => void) | (() => Promise<void>);
 
   children?: ReactNode;
   textColor?: string;
