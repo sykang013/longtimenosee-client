@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { light } from '@/assets/themes';
-import InputProfile from '@/components/inputs/InputProfile';
+import { InputProfile } from '@/components/inputs';
 import { ButtonMain } from '@/components/buttons';
 
 const MakeProfileScreen = () => {

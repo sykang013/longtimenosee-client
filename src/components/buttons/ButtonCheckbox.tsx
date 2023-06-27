@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Pressable } from 'react-native';
 import styled from 'styled-components/native';
 import CheckTrue from '@/assets/icons/CheckTrue';
@@ -7,30 +7,32 @@ import CheckFalsePrimary from '@/assets/icons/CheckFalsePrimary';
 import { globalColor, paragraph, light } from '@/assets/themes';
 
 interface StTextProps {
-  color?: 'gray' | 'primary';
+  textColor?: 'gray' | 'primary';
 }
 
 interface ButtonCheckBoxProps extends StTextProps {
   contents: string;
   isDetailed?: boolean;
+  isChecked: boolean;
+  toggleCheckBox: () => void;
 }
 
-const ButtonCheckbox = ({ color = 'gray', contents, isDetailed = false }: ButtonCheckBoxProps) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const toggleCheckBox = () => {
-    setIsChecked((prev) => !prev);
-  };
-
+const ButtonCheckbox = ({
+  textColor = 'gray',
+  contents,
+  isDetailed = false,
+  isChecked,
+  toggleCheckBox,
+}: ButtonCheckBoxProps) => {
   return (
     <StButtonCheckboxContainer>
       <StButtonCheckbox>
         <Pressable onPress={toggleCheckBox}>
           {isChecked && <CheckTrue />}
-          {!isChecked && color === 'gray' && <CheckFalseGray />}
-          {!isChecked && color === 'primary' && <CheckFalsePrimary />}
+          {!isChecked && textColor === 'gray' && <CheckFalseGray />}
+          {!isChecked && textColor === 'primary' && <CheckFalsePrimary />}
         </Pressable>
-        <StText color={color}>{contents}</StText>
+        <StText textColor={textColor}>{contents}</StText>
       </StButtonCheckbox>
       {isDetailed && (
         <Pressable>
@@ -59,7 +61,7 @@ const StButtonCheckbox = styled.View`
 `;
 
 const StText = styled.Text<StTextProps>`
-  color: ${(props) => (props.color === 'primary' ? globalColor.primary : globalColor.black)};
+  color: ${(props) => (props.textColor === 'primary' ? globalColor.primary : globalColor.black)};
   ${paragraph.XS};
 `;
 
