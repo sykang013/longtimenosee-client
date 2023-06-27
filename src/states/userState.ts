@@ -1,10 +1,5 @@
 import { UserInfo } from '@/types';
-import { atom } from 'recoil';
-
-const userSignedIn = atom<boolean>({
-  key: 'userSignedIn',
-  default: false,
-});
+import { atom, selector } from 'recoil';
 
 const userInfo = atom<UserInfo>({
   key: 'userInfo',
@@ -14,4 +9,18 @@ const userInfo = atom<UserInfo>({
   },
 });
 
-export { userSignedIn, userInfo };
+const userSignedIn = selector<boolean>({
+  key: 'userSignedIn',
+  get: ({ get }) => {
+    const { email, nickname } = get(userInfo);
+    return email !== '' && nickname !== '';
+  },
+  set: ({ set }) => {
+    set(userInfo, {
+      email: '',
+      nickname: '',
+    });
+  },
+});
+
+export { userInfo, userSignedIn };

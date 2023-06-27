@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import { ButtonAssist, ButtonMain } from '@/components/buttons';
 import { InputAuth } from '@/components/inputs';
 import { globalColor, light } from '@/assets/themes';
-import { Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { Alert, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { signIn } from '@/apis/auth';
 import { useSetRecoilState } from 'recoil';
 import { userInfo, userSignedIn } from '@/states/userState';
@@ -41,9 +41,14 @@ const SignInScreen = ({ navigation }: ScreenProps<'SignInScreen'>) => {
       });
       navigation.navigate('MainPlanScreen');
     } catch (error: unknown) {
-      const message = (error as CustomError).response?.data?.error?.message ?? error;
-      setErrorMessage(`${message}`);
-      setPassword('');
+      const customError = error as CustomError;
+      const errorCode = customError?.response?.data?.error?.code;
+      const errorMessage = customError?.response?.data?.error?.message ?? error;
+      if (errorCode === 'LOGIN_FAILURE') {
+        setErrorMessage(`${errorMessage}`);
+      } else {
+        Alert.alert(`${errorMessage}`);
+      }
     }
   };
 
