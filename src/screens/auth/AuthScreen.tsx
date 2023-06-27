@@ -1,16 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Image } from 'react-native';
-import { RootStackParamList } from '../Navigation';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { globalColor, label, light } from '@/assets/themes';
 import { ButtonAssist } from '@/components/buttons';
+import { ScreenProps } from '@/types';
 
-type AuthScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'AuthScreen'>;
-};
-
-const AuthScreen = ({ navigation }: AuthScreenProps) => {
+const AuthScreen = ({ navigation }: ScreenProps<'AuthScreen'>) => {
   return (
     <StContainer>
       <StMainTitle>언제어디</StMainTitle>
