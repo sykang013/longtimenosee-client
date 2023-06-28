@@ -14,7 +14,7 @@ const EmailAuthenticationScreen = ({
   const verifyUserHandler = async () => {
     try {
       await verifyUser({ email: route.params.email });
-      navigation.navigate('MakeProfileScreen');
+      navigation.navigate('CreateProfileScreen');
     } catch (error) {
       const message = (error as CustomError).response?.data?.error?.message ?? error;
       Alert.alert('에러', `${message}`, [{ text: '확인' }]);

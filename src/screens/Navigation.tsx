@@ -5,7 +5,7 @@ import {
   SignInScreen,
   SignUpScreen,
   EmailAuthenticationScreen,
-  MakeProfileScreen,
+  CreateProfileScreen,
 } from '@/screens/index';
 import { heading, light } from '@/assets/themes';
 import { RecoilRoot, useRecoilState } from 'recoil';
@@ -17,7 +17,7 @@ export type RootStackParamList = {
   SignInScreen: undefined;
   SignUpScreen: undefined;
   EmailAuthenticationScreen: { email: string };
-  MakeProfileScreen: undefined;
+  CreateProfileScreen: undefined;
   MainPlanScreen: undefined;
   // 필요에 따라 다른 화면들을 추가할 수 있습니다.
 };
@@ -70,8 +70,8 @@ const NavigationContent = () => {
             }}
           />
           <Stack.Screen
-            name="MakeProfileScreen"
-            component={MakeProfileScreen}
+            name="CreateProfileScreen"
+            component={CreateProfileScreen}
             options={{
               title: '프로필 만들기',
               headerTitleAlign: 'center',
