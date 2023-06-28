@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextProps } from 'react-native';
 import styled from 'styled-components/native';
-import { label, light, globalColor } from '@/assets/themes';
+import { label, light } from '@/assets/themes';
 
 interface StLNBTextProps extends TextProps {
   textColor?: string;
@@ -16,7 +16,7 @@ interface CommonLNBTextProps extends StLNBTextProps {
 const CommonLNBText = ({
   width = '100%',
   height = 40,
-  backgroundColor = globalColor.primary,
+  backgroundColor = light.background,
   textColor = light.contents.contentMain,
 }: CommonLNBTextProps) => {
   return (
