@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { light, label, paragraph } from '@/assets/themes';
+import { light, paragraph } from '@/assets/themes';
 
 interface StContainerProps {
   isActive: boolean;
@@ -45,7 +45,7 @@ const StLabel = styled.Text`
   width: 60px;
   color: ${light.contents.contentMain};
   vertical-align: middle;
-  ${label.Small};
+  ${paragraph.Small};
 `;
 
 const StInput = styled.TextInput`
