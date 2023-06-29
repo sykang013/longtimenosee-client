@@ -14,12 +14,12 @@ interface InputProfileProps extends StContainerProps {
   maxLength: number;
 }
 
-const InputProfile = ({ placeholder, isActive, label, maxLength, ...rest }: InputProfileProps) => {
+const InputProfile = ({ placeholder, isActive, label, maxLength }: InputProfileProps) => {
   return (
     <StContainer>
       <StInputContainer isActive={isActive}>
         <StLabel>{label}</StLabel>
-        <StInput placeholder={placeholder} {...rest} />
+        <StInput placeholder={placeholder} />
       </StInputContainer>
       <StCount>0/{maxLength}</StCount>
     </StContainer>
@@ -45,11 +45,15 @@ const StLabel = styled.Text`
   width: 60px;
   color: ${light.contents.contentMain};
   vertical-align: middle;
-  ${paragraph.Small};
+  padding: 0;
+  ${paragraph.Small}
 `;
 
-const StInput = styled.TextInput`
+const StInput = styled.TextInput.attrs({ placeholderTextColor: light.contents.contentThird })`
+  flex: 1;
   padding: 0;
+  ${paragraph.Small};
+  line-height: 0;
 `;
 
 const StCount = styled.Text`
