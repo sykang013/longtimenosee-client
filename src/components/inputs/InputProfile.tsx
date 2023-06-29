@@ -12,16 +12,33 @@ interface InputProfileProps extends StContainerProps {
   onFocus: () => void;
   onBlur: () => void;
   maxLength: number;
+  value: string;
+  // eslint-disable-next-line no-unused-vars
+  onChangeText: (value: string) => void;
 }
 
-const InputProfile = ({ placeholder, isActive, label, maxLength }: InputProfileProps) => {
+const InputProfile = ({
+  placeholder,
+  isActive,
+  label,
+  maxLength,
+  value,
+  onChangeText,
+}: InputProfileProps) => {
   return (
     <StContainer>
       <StInputContainer isActive={isActive}>
         <StLabel>{label}</StLabel>
-        <StInput placeholder={placeholder} />
+        <StInput
+          placeholder={placeholder}
+          maxLength={maxLength}
+          value={value}
+          onChangeText={onChangeText}
+        />
       </StInputContainer>
-      <StCount>0/{maxLength}</StCount>
+      <StCount>
+        {value.length}/{maxLength}
+      </StCount>
     </StContainer>
   );
 };
