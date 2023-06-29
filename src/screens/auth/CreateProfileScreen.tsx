@@ -4,7 +4,7 @@ import { globalColor, heading, light } from '@/assets/themes';
 import { InputProfile } from '@/components/inputs';
 import { ButtonMain } from '@/components/buttons';
 import { View } from 'react-native';
-import { randomRGB } from '@/utils/randomRGB';
+import { randomProfileColor } from '@/utils/randomProfileColor';
 
 interface StProfileProps {
   profileColor: string;
@@ -19,7 +19,7 @@ const CreateProfileScreen = () => {
   const [nickname, setNickname] = useState('');
   const [description, setDescription] = useState('');
 
-  const profileColor = useRef(randomRGB()).current;
+  const profileColor = useRef(randomProfileColor()).current;
 
   return (
     <StContainer>
