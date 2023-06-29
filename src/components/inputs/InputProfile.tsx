@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { light, paragraph } from '@/assets/themes';
+import { Platform } from 'react-native';
 
 interface StContainerProps {
   isActive: boolean;
@@ -70,7 +71,7 @@ const StInput = styled.TextInput.attrs({ placeholderTextColor: light.contents.co
   flex: 1;
   padding: 0;
   ${paragraph.Small};
-  line-height: 0;
+  line-height: ${Platform.OS === 'ios' ? 0 : paragraph.Small.lineHeight};
 `;
 
 const StCount = styled.Text`
