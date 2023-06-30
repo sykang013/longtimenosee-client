@@ -3,23 +3,53 @@ import styled from 'styled-components/native';
 import { globalColor, heading, light } from '@/assets/themes';
 import { InputProfile } from '@/components/inputs';
 import { ButtonMain } from '@/components/buttons';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import { randomProfileColor } from '@/utils/randomProfileColor';
-
+import { CustomError, ScreenProps } from '@/types';
+import { updateProfile } from '@/apis/user';
+import { userInfo } from '@/states/userState';
+import { useSetRecoilState } from 'recoil';
 interface StProfileProps {
   profileColor: string;
 }
 
 const NICKNAME_MIN_LENGTH = 2;
 
-const CreateProfileScreen = () => {
+const CreateProfileScreen = ({ navigation }: ScreenProps<'CreateProfileScreen'>) => {
   const [isNicknameActive, setIsNicknameActive] = useState(false);
   const [isDescriptionActive, setIsDescriptionActive] = useState(false);
 
   const [nickname, setNickname] = useState('');
   const [description, setDescription] = useState('');
 
+  const setUserInfo = useSetRecoilState(userInfo);
+
   const profileColor = useRef(randomProfileColor()).current;
+
+  const updateProfileHandler = async () => {
+    try {
+      const response = await updateProfile({
+        nickname,
+        description: description === '' ? '자기소개를 입력해보세요.' : description,
+        profile_color: profileColor,
+      });
+
+      setUserInfo((prev) => ({
+        ...prev,
+        nickname: response.data.data.nickname,
+        description: response.data.data.description,
+        profile_color: response.data.data.profile_color,
+      }));
+
+      navigation.navigate('MainPlanScreen');
+      Alert.alert('회원가입 완료', '회원가입을 축하드립니다!\n약속이나 그룹을 생성해보세요!', [
+        { text: '확인' },
+      ]);
+    } catch (error) {
+      const message = (error as CustomError).response?.data?.error?.message ?? error;
+      Alert.alert('에러', `${message}`, [{ text: '확인' }]);
+    }
+  };
 
   return (
     <StContainer>
@@ -51,6 +81,7 @@ const CreateProfileScreen = () => {
       <ButtonMain
         buttonState={nickname.length >= NICKNAME_MIN_LENGTH ? 'ActivePrimary' : 'InActivePrimary'}
         width={312}
+        onPress={updateProfileHandler}
       >
         확인
       </ButtonMain>

@@ -6,19 +6,23 @@ const userInfo = atom<UserInfo>({
   default: {
     email: '',
     nickname: '',
+    description: '',
+    profile_color: '',
   },
 });
 
 const userSignedIn = selector<boolean>({
   key: 'userSignedIn',
   get: ({ get }) => {
-    const { email, nickname } = get(userInfo);
-    return email !== '' && nickname !== '';
+    const { email } = get(userInfo);
+    return email !== '';
   },
   set: ({ set }) => {
     set(userInfo, {
       email: '',
       nickname: '',
+      description: '',
+      profile_color: '',
     });
   },
 });
