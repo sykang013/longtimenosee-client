@@ -6,4 +6,6 @@ export interface Auth {
 export interface UserInfo {
   email: string;
   nickname: string;
+  description?: string;
+  profile_color?: string;
 }

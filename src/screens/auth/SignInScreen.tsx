@@ -12,7 +12,7 @@ import { CustomError, ScreenProps, UserInfo } from '@/types';
 const SignInScreen = ({ navigation }: ScreenProps<'SignInScreen'>) => {
   const [emailActive, setEmailActive] = useState(false);
   const [passwordActive, setPasswordActive] = useState(false);
-  const [userEmail, setuserEmail] = useState('');
+  const [userEmail, setUserEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const setUserInfo = useSetRecoilState(userInfo);
@@ -33,11 +33,16 @@ const SignInScreen = ({ navigation }: ScreenProps<'SignInScreen'>) => {
       }
       const response = await signIn({ email: userEmail, password: password });
       const { email, nickname } = response.data.data as UserInfo;
+      const isValid = response.data.data.is_valid;
+
       setUserInfo({
         email: email,
         nickname: nickname,
       });
-      navigation.navigate('MainPlanScreen');
+
+      isValid && nickname
+        ? navigation.navigate('MainPlanScreen')
+        : navigation.navigate('EmailAuthenticationScreen');
     } catch (error: unknown) {
       const customError = error as CustomError;
       const errorCode = customError?.response?.data?.error?.code;
@@ -59,7 +64,7 @@ const SignInScreen = ({ navigation }: ScreenProps<'SignInScreen'>) => {
             isActive={emailActive}
             onFocus={() => setEmailActive(true)}
             onBlur={() => setEmailActive(false)}
-            onChangeText={(email) => setuserEmail(email)}
+            onChangeText={(email) => setUserEmail(email)}
           />
           <InputAuth
             placeholder="비밀번호"

@@ -3,13 +3,13 @@ import { PressableProps, TextProps } from 'react-native';
 import styled from 'styled-components/native';
 import { label, light, globalColor } from '@/assets/themes';
 interface ButtonMainProps extends PressableProps {
-  buttonState?: string;
+  buttonState?: 'InActivePrimary' | 'ActivePrimary' | 'Line' | 'BW';
   backgroundColor?: string;
   width?: number;
   height?: number;
   borderRadius?: number;
   onPress?: (() => void) | (() => Promise<void>);
-
+  disabled?: boolean;
   children?: ReactNode;
   textColor?: string;
 }
@@ -27,12 +27,14 @@ const ButtonMain = ({
   onPress,
   children = '텍스트',
   textColor,
+  disabled = false,
   ...rest
 }: ButtonMainProps) => {
   switch (buttonState) {
     case 'InActivePrimary':
       backgroundColor = globalColor.blue[200];
       textColor = light.background;
+      disabled = true;
       break;
     case 'ActivePrimary':
       backgroundColor = globalColor.primary;
@@ -59,6 +61,7 @@ const ButtonMain = ({
       height={height}
       borderRadius={borderRadius}
       onPress={onPress}
+      disabled={disabled}
       {...rest}
     >
       <StButtonText textColor={textColor}>{children}</StButtonText>

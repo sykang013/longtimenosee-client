@@ -4,9 +4,10 @@ import { InputAuth } from '@/components/inputs';
 import { Alert, Keyboard, TouchableWithoutFeedback, View } from 'react-native';
 import { globalColor, paragraph, light } from '@/assets/themes';
 import { ButtonCheckbox, ButtonMain } from '@/components/buttons';
-import { signUp } from '@/apis/auth';
-import { CustomError } from '@/types/error';
-import { ScreenProps } from '@/types';
+import { signIn, signUp } from '@/apis/auth';
+import { CustomError, ScreenProps } from '@/types';
+import { useSetRecoilState } from 'recoil';
+import { userInfo } from '@/states/userState';
 
 const SignUpScreen = ({ navigation }: ScreenProps<'SignUpScreen'>) => {
   const [isEmailActive, setIsEmailActive] = useState(false);
@@ -27,6 +28,8 @@ const SignUpScreen = ({ navigation }: ScreenProps<'SignUpScreen'>) => {
   const [isUseChecked, setIsUseChecked] = useState(false);
   const [isPersonalChecked, setIsPersonalChecked] = useState(false);
 
+  const setUserInfo = useSetRecoilState(userInfo);
+
   const isAllChecked = isAgeChecked && isUseChecked && isPersonalChecked;
   const toggleIsAllChecked = () => {
     if (isAllChecked) {
@@ -43,7 +46,10 @@ const SignUpScreen = ({ navigation }: ScreenProps<'SignUpScreen'>) => {
   const signUpHandler = async () => {
     try {
       await signUp({ email, password });
-      navigation.navigate('EmailAuthenticationScreen', { email: email });
+      await signIn({ email, password });
+
+      setUserInfo((prev) => ({ ...prev, email }));
+      navigation.navigate('EmailAuthenticationScreen');
     } catch (error) {
       const message = (error as CustomError).response?.data?.error?.message ?? error;
       Alert.alert('에러', `${message}`, [{ text: '확인' }]);
