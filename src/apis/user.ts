@@ -7,5 +7,5 @@ interface UpdateProfile {
 }
 
 export const updateProfile = ({ nickname, description, profile_color }: UpdateProfile) => {
-  return instance.put('/user/profile', { nickname, description, profile_color });
+  return instance.patch('/user/profile', { nickname, description, profile_color });
 };
