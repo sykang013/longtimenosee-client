@@ -6,6 +6,7 @@ import {
   SignUpScreen,
   EmailAuthenticationScreen,
   MakeProfileScreen,
+  KakaoWebViewScreen,
 } from '@/screens/index';
 import { heading, light } from '@/assets/themes';
 import { RecoilRoot, useRecoilState } from 'recoil';
@@ -19,6 +20,7 @@ export type RootStackParamList = {
   EmailAuthenticationScreen: { email: string };
   MakeProfileScreen: undefined;
   MainPlanScreen: undefined;
+  KakaoWebViewScreen: undefined;
   // 필요에 따라 다른 화면들을 추가할 수 있습니다.
 };
 
@@ -78,6 +80,11 @@ const NavigationContent = () => {
               headerTintColor: light.contents.contentMain,
               headerTitleStyle: heading.Small,
             }}
+          />
+          <Stack.Screen
+            name="KakaoWebViewScreen"
+            component={KakaoWebViewScreen}
+            options={{ headerShown: false }}
           />
         </>
       ) : (

@@ -6,6 +6,9 @@ import { ButtonAssist } from '@/components/buttons';
 import { ScreenProps } from '@/types';
 
 const AuthScreen = ({ navigation }: ScreenProps<'AuthScreen'>) => {
+  const kakaoPressHandler = () => {
+    navigation.navigate('KakaoWebViewScreen');
+  };
   return (
     <StContainer>
       <StMainTitle>언제어디</StMainTitle>
@@ -19,7 +22,7 @@ const AuthScreen = ({ navigation }: ScreenProps<'AuthScreen'>) => {
             <StButtonText>로그인</StButtonText>
           </StButton>
         </StButtonInnerContainer>
-        <StKaKaoButton>
+        <StKaKaoButton onPress={kakaoPressHandler}>
           <Image source={require('@/assets/images/kakao_login.png')} />
         </StKaKaoButton>
         <ButtonAssist onPress={() => navigation.navigate('SignUpScreen')} title="회원가입" />
