@@ -4,6 +4,7 @@ export interface Auth {
 }
 
 export interface UserInfo {
-  email: string;
+  email?: string;
+  social_id?: string;
   nickname: string;
 }
