@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { light, label, paragraph } from '@/assets/themes';
+import { light, paragraph } from '@/assets/themes';
+import { Platform } from 'react-native';
 
 interface StContainerProps {
   isActive: boolean;
@@ -12,16 +13,33 @@ interface InputProfileProps extends StContainerProps {
   onFocus: () => void;
   onBlur: () => void;
   maxLength: number;
+  value: string;
+  // eslint-disable-next-line no-unused-vars
+  onChangeText: (value: string) => void;
 }
 
-const InputProfile = ({ placeholder, isActive, label, maxLength, ...rest }: InputProfileProps) => {
+const InputProfile = ({
+  placeholder,
+  isActive,
+  label,
+  maxLength,
+  value,
+  onChangeText,
+}: InputProfileProps) => {
   return (
     <StContainer>
       <StInputContainer isActive={isActive}>
         <StLabel>{label}</StLabel>
-        <StInput placeholder={placeholder} {...rest} />
+        <StInput
+          placeholder={placeholder}
+          maxLength={maxLength}
+          value={value}
+          onChangeText={onChangeText}
+        />
       </StInputContainer>
-      <StCount>0/{maxLength}</StCount>
+      <StCount>
+        {value.length}/{maxLength}
+      </StCount>
     </StContainer>
   );
 };
@@ -45,11 +63,15 @@ const StLabel = styled.Text`
   width: 60px;
   color: ${light.contents.contentMain};
   vertical-align: middle;
-  ${label.Small};
+  padding: 0;
+  ${paragraph.Small}
 `;
 
-const StInput = styled.TextInput`
+const StInput = styled.TextInput.attrs({ placeholderTextColor: light.contents.contentThird })`
+  flex: 1;
   padding: 0;
+  ${paragraph.Small};
+  line-height: ${Platform.OS === 'ios' ? 0 : paragraph.Small.lineHeight};
 `;
 
 const StCount = styled.Text`

@@ -37,5 +37,6 @@ module.exports = {
     'no-unused-vars': 'error', // 사용하지 않는 변수 금지,
     '@typescript-eslint/no-unsafe-assignment': 'warn',
     '@typescript-eslint/no-unsafe-member-access': 'warn',
+    '@typescript-eslint/restrict-template-expressions': 'warn',
   },
 };
