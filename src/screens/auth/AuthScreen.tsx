@@ -19,7 +19,7 @@ const AuthScreen = ({ navigation }: ScreenProps<'AuthScreen'>) => {
             <StButtonText>로그인</StButtonText>
           </StButton>
         </StButtonInnerContainer>
-        <StKaKaoButton>
+        <StKaKaoButton onPress={() => navigation.navigate('KakaoWebViewScreen')}>
           <Image source={require('@/assets/images/kakao_login.png')} />
         </StKaKaoButton>
         <ButtonAssist onPress={() => navigation.navigate('SignUpScreen')} title="회원가입" />

@@ -10,7 +10,8 @@ import { userInfo } from '@/states/userState';
 import { useRecoilValue } from 'recoil';
 
 const EmailAuthenticationScreen = ({ navigation }: ScreenProps<'EmailAuthenticationScreen'>) => {
-  const { email } = useRecoilValue(userInfo);
+  const userInfoValue = useRecoilValue(userInfo);
+  const email = userInfoValue.email!;
   const verifyUserHandler = async () => {
     try {
       await verifyUser({ email });
