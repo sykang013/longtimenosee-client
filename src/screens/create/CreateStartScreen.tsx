@@ -10,8 +10,12 @@ const CreateStartScreen = () => {
     <StContainer>
       <CommonLNBText></CommonLNBText>
       <StBodyContainer>
-        <ButtonCard></ButtonCard>
-        <ButtonCard></ButtonCard>
+        <ButtonCard contentsMain="약속" contentsSub="일회성 약속에 적합합니다."></ButtonCard>
+        <ButtonCard
+          // color="pink"
+          contentsMain="그룹"
+          contentsSub="정기적 모임에 적합합니다."
+        ></ButtonCard>
       </StBodyContainer>
       <StBottomContainer>
         <ButtonMain buttonState="ActivePrimary" width={328}>
@@ -36,7 +40,6 @@ const StBodyContainer = styled.View`
   gap: 12px;
   flex-direction: column;
   align-items: center;
-  /* background-color: yellow; */
   padding: 16px;
 `;
 
