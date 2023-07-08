@@ -28,6 +28,27 @@ const caption = {
     lineHeight: `${lineHeight * fontSizeXXS}px`,
     textDecorationLine: textDecoration,
   },
+  inlineSmall: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeSmall,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeSmall,
+    textDecorationLine: textDecoration,
+  },
+  inlineXS: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeXS,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeXS,
+    textDecorationLine: textDecoration,
+  },
+  inlineXXS: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeXXS,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeXXS,
+    textDecorationLine: textDecoration,
+  },
 };
 
 export default caption;

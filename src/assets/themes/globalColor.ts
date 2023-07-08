@@ -38,6 +38,8 @@ const globalColor = {
   secondary: '#7da8f7',
   warning: '#e82209',
   borderTransparent: '#8989894d',
+  process: '#FFB930',
+  processSub: '#FFF7DD',
 };
 
 export default globalColor;
