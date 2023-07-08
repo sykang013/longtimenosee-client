@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { globalColor, heading } from '@/assets/themes';
+import { globalColor } from '@/assets/themes';
 import { NavigatorTop } from '@/components/navigators';
 import { horizontalScale, verticalScale } from '@/utils/metric';
 import {
@@ -73,7 +73,10 @@ const NavigatorBottom = () => {
           tabBarLabel: '홈',
           title: '언제어디',
           headerTintColor: globalColor.primary,
-          headerTitleStyle: heading.inlineLarge,
+          headerTitleStyle: {
+            fontFamily: 'GmarketSansMedium',
+            letterSpacing: -0.5,
+          },
           headerRight: () => (
             <View
               style={{
