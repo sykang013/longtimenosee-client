@@ -4,6 +4,8 @@ import SignUpScreen from './auth/SignUpScreen';
 import EmailAuthenticationScreen from './auth/EmailAuthenticationScreen';
 import CreateProfileScreen from './auth/CreateProfileScreen';
 import KakaoWebViewScreen from './auth/KakaoWebViewScreen';
+import MainPlanScreen from './plan/MainPlanScreen';
+import MainGroupScreen from './group/MainGroupScreen';
 export {
   AuthScreen,
   SignInScreen,
@@ -11,4 +13,6 @@ export {
   EmailAuthenticationScreen,
   CreateProfileScreen,
   KakaoWebViewScreen,
+  MainPlanScreen,
+  MainGroupScreen,
 };
