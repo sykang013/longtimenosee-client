@@ -59,6 +59,54 @@ const heading = {
     letterSpacing: letterSpacing,
     lineHeight: `${lineHeight * fontSizeXXS}px`,
   },
+  inlineXXXL: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeXXXL,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeXXXL,
+  },
+  inlineXXL: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeXXL,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeXXL,
+  },
+  inlineXL: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeXL,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeXL,
+  },
+  inlineLarge: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeLarge,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeLarge,
+  },
+  inlineMedium: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeMedium,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeMedium,
+  },
+  inlineSmall: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeSmall,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeSmall,
+  },
+  inlineXS: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeXS,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeXS,
+  },
+  inlineXXS: {
+    fontFamily: fontFamily,
+    fontSize: fontSizeXXS,
+    letterSpacing: letterSpacing,
+    lineHeight: lineHeight * fontSizeXXS,
+  },
 };
 
 export default heading;
