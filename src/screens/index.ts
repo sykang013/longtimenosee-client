@@ -7,6 +7,7 @@ import KakaoWebViewScreen from './auth/KakaoWebViewScreen';
 import MainPlanScreen from './plan/MainPlanScreen';
 import MainGroupScreen from './group/MainGroupScreen';
 import CreateStartScreen from './create/CreateStartScreen';
+import CreatePlanWriteTitleScreen from './create/CreatePlanWriteTitleScreen';
 
 export {
   AuthScreen,
@@ -18,4 +19,5 @@ export {
   MainPlanScreen,
   MainGroupScreen,
   CreateStartScreen,
+  CreatePlanWriteTitleScreen,
 };

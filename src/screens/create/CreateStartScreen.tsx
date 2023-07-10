@@ -1,24 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import { TextProps } from 'react-native';
 import styled from 'styled-components/native';
-// import { light } from '@/assets/themes';
 import { ButtonMain } from '@/components/buttons';
 import { CommonLNBText } from '@/components/common';
-import { ButtonCard } from '@/components/buttons';
+import { light, label, paragraph, globalColor } from '@/assets/themes';
+import CheckWithoutBox from '@/assets/icons/CheckWithoutBox';
+import { ScreenProps } from '@/types';
 
-const CreateStartScreen = () => {
+{
+  /*interface ButtonCardProps extends TextProps {
+  //contentsMain, Sub이란 프롭스의 데이터 타입은 string 이어야 한다.
+  contentsMain: string;
+  contentsSub: string;
+  //onPress 이벤트 핸들러는 옵션값이다.클릭시 onPress prop으로 전달된 콜백함수가 실행됨.
+  // onPress?: () => void;
+}*/
+}
+
+const CreateStartScreen = ({ navigation }: ScreenProps<'CreateStartScreen'>) => {
+  const [planSelected, setPlanSelected] = useState(true);
+  const selectPlan = () => {
+    setPlanSelected(true);
+    // console.log(`약속버튼 클릭시 ${planSelected}`);
+  };
+  const selectGroup = () => {
+    setPlanSelected(false);
+    // console.log(`그룹버튼 클릭시 ${planSelected}`);
+  };
   return (
     <StContainer>
-      <CommonLNBText></CommonLNBText>
+      <CommonLNBText>어떤 것을 만들고 싶으신가요?</CommonLNBText>
       <StBodyContainer>
-        <ButtonCard contentsMain="약속" contentsSub="일회성 약속에 적합합니다."></ButtonCard>
-        <ButtonCard
-          // color="pink"
-          contentsMain="그룹"
-          contentsSub="정기적 모임에 적합합니다."
-        ></ButtonCard>
+        <StContainer2
+          onPress={selectPlan}
+          style={{ borderColor: planSelected ? globalColor.primary : light.background }}
+        >
+          <StTextContainer>
+            <StTextMain
+              style={{ color: planSelected ? globalColor.primary : light.contents.contentMain }}
+            >
+              약속
+            </StTextMain>
+            <StTextSub
+              style={{ color: planSelected ? globalColor.primary : light.contents.contentMain }}
+            >
+              일회성 약속에 적합합니다.
+            </StTextSub>
+          </StTextContainer>
+          {planSelected && <CheckWithoutBox />}
+        </StContainer2>
+        <StContainer2
+          onPress={selectGroup}
+          style={{ borderColor: !planSelected ? globalColor.primary : light.background }}
+        >
+          <StTextContainer>
+            <StTextMain
+              style={{ color: !planSelected ? globalColor.primary : light.contents.contentMain }}
+            >
+              그룹
+            </StTextMain>
+            <StTextSub
+              style={{ color: !planSelected ? globalColor.primary : light.contents.contentMain }}
+            >
+              정기적 모임에 적합합니다.
+            </StTextSub>
+          </StTextContainer>
+          {!planSelected && <CheckWithoutBox />}
+        </StContainer2>
       </StBodyContainer>
       <StBottomContainer>
-        <ButtonMain buttonState="ActivePrimary" width={328}>
+        <ButtonMain
+          buttonState="ActivePrimary"
+          width={328}
+          onPress={() => navigation.navigate('CreatePlanWriteTitleScreen')}
+        >
           다음
         </ButtonMain>
       </StBottomContainer>
@@ -46,13 +101,38 @@ const StBodyContainer = styled.View`
 const StBottomContainer = styled.View`
   position: absolute;
   bottom: 0;
-  height: 60px;
-  width: 200px;
+  width: 100%;
+  height: 90px;
   align-items: center;
-  padding: 8px;
+  padding-top: 8px;
   flex: 1;
-  justify-content: flex-end;
-  background-color: teal;
+  background-color: ${light.background};
 `;
 
+// ButtonCardComponent 스타일
+const StContainer2 = styled.Pressable`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px;
+  width: 328px;
+  height: 75px;
+  border: 1px;
+  border-radius: 4px;
+  background: ${light.background};
+`;
+
+const StTextContainer = styled.View`
+  display: flex;
+  flex-direction: column;
+`;
+
+const StTextMain = styled.Text`
+  ${label.Medium};
+`;
+
+const StTextSub = styled.Text`
+  ${paragraph.XS}
+`;
 export default CreateStartScreen;
