@@ -8,6 +8,7 @@ import MainPlanScreen from './plan/MainPlanScreen';
 import MainGroupScreen from './group/MainGroupScreen';
 import CreateStartScreen from './create/CreateStartScreen';
 import CreatePlanWriteTitleScreen from './create/CreatePlanWriteTitleScreen';
+import CreatePlanWriteIntroduceScreen from './create/CreatePlanWriteIntroduceScreen';
 
 export {
   AuthScreen,
@@ -20,4 +21,5 @@ export {
   MainGroupScreen,
   CreateStartScreen,
   CreatePlanWriteTitleScreen,
+  CreatePlanWriteIntroduceScreen,
 };

@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
-// import { TextProps } from 'react-native';
 import styled from 'styled-components/native';
 import { ButtonMain } from '@/components/buttons';
 import { CommonLNBText } from '@/components/common';
 import { light, label, paragraph, globalColor } from '@/assets/themes';
 import CheckWithoutBox from '@/assets/icons/CheckWithoutBox';
 import { ScreenProps } from '@/types';
-
-{
-  /*interface ButtonCardProps extends TextProps {
-  //contentsMain, Sub이란 프롭스의 데이터 타입은 string 이어야 한다.
-  contentsMain: string;
-  contentsSub: string;
-  //onPress 이벤트 핸들러는 옵션값이다.클릭시 onPress prop으로 전달된 콜백함수가 실행됨.
-  // onPress?: () => void;
-}*/
-}
 
 const CreateStartScreen = ({ navigation }: ScreenProps<'CreateStartScreen'>) => {
   const [planSelected, setPlanSelected] = useState(true);

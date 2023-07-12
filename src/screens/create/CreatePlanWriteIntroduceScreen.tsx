@@ -3,19 +3,14 @@ import styled from 'styled-components/native';
 import { ButtonMain } from '@/components/buttons';
 import { CommonLNBText } from '@/components/common';
 import { light } from '@/assets/themes';
-import { ScreenProps } from '@/types';
 
-const CreatePlanWriteTitleScreen = ({ navigation }: ScreenProps<'CreatePlanWriteTitleScreen'>) => {
+const CreatePlanWriteIntroduceScreen = () => {
   return (
     <StContainer>
-      <CommonLNBText>약속 제목을 적어보세요.</CommonLNBText>
+      <CommonLNBText>약속 소개를 적어보세요.(선택사항)</CommonLNBText>
       <StBodyContainer></StBodyContainer>
       <StBottomContainer>
-        <ButtonMain
-          buttonState="ActivePrimary"
-          width={328}
-          onPress={() => navigation.navigate('CreatePlanWriteIntroduceScreen')}
-        >
+        <ButtonMain buttonState="ActivePrimary" width={328}>
           다음
         </ButtonMain>
       </StBottomContainer>
@@ -51,4 +46,4 @@ const StBottomContainer = styled.View`
   background-color: ${light.background};
 `;
 
-export default CreatePlanWriteTitleScreen;
+export default CreatePlanWriteIntroduceScreen;

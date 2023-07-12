@@ -9,6 +9,7 @@ import {
   CreateProfileScreen,
   CreateStartScreen,
   CreatePlanWriteTitleScreen,
+  CreatePlanWriteIntroduceScreen,
 } from '@/screens/index';
 import { heading, light } from '@/assets/themes';
 import { RecoilRoot, useRecoilState, useRecoilValue } from 'recoil';
@@ -25,6 +26,7 @@ export type RootStackParamList = {
   KakaoWebViewScreen: undefined;
   CreateStartScreen: undefined;
   CreatePlanWriteTitleScreen: undefined;
+  CreatePlanWriteIntroduceScreen: undefined;
   // 필요에 따라 다른 화면들을 추가할 수 있습니다.
 };
 
@@ -118,6 +120,17 @@ const NavigationContent = () => {
       <Stack.Screen
         name="CreatePlanWriteTitleScreen"
         component={CreatePlanWriteTitleScreen}
+        options={{
+          title: '약속만들기',
+          headerTitleAlign: 'center',
+          headerTintColor: light.contents.contentMain,
+          headerTitleStyle: heading.Small,
+          headerShadowVisible: true,
+        }}
+      />
+      <Stack.Screen
+        name="CreatePlanWriteIntroduceScreen"
+        component={CreatePlanWriteIntroduceScreen}
         options={{
           title: '약속만들기',
           headerTitleAlign: 'center',
