@@ -66,7 +66,7 @@ const CreateStartScreen = ({ navigation }: ScreenProps<'CreateStartScreen'>) => 
             </StTextContainer>
             {!planSelected && <CheckWithoutBox />}
           </StCard>
-          <StTextDetail>정기적 모임에 적합합니다.</StTextDetail>
+          <StTextDetail>*그룹은 로그인 회원 기능입니다.</StTextDetail>
         </StCardContainer>
       </StBodyContainer>
       <StBottomContainer>
