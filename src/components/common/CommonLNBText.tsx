@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { TextProps } from 'react-native';
 import styled from 'styled-components/native';
 import { label, light } from '@/assets/themes';
@@ -11,6 +11,7 @@ interface CommonLNBTextProps extends StLNBTextProps {
   backgroundColor?: string;
   width?: string;
   height?: number;
+  children?: ReactNode;
 }
 
 const CommonLNBText = ({
@@ -18,10 +19,11 @@ const CommonLNBText = ({
   height = 40,
   backgroundColor = light.background,
   textColor = light.contents.contentMain,
+  children = '텍스트를 입력해주세요.',
 }: CommonLNBTextProps) => {
   return (
     <StCommonLNBText width={width} height={height} backgroundColor={backgroundColor}>
-      <StLNBText textColor={textColor}>어떤 것을 만들고 싶으신가요?</StLNBText>
+      <StLNBText textColor={textColor}>{children}</StLNBText>
     </StCommonLNBText>
   );
 };
