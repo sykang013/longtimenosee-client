@@ -21,52 +21,53 @@ const CreateStartScreen = ({ navigation }: ScreenProps<'CreateStartScreen'>) => 
   const [planSelected, setPlanSelected] = useState(true);
   const selectPlan = () => {
     setPlanSelected(true);
-    // console.log(`약속버튼 클릭시 ${planSelected}`);
   };
   const selectGroup = () => {
     setPlanSelected(false);
-    // console.log(`그룹버튼 클릭시 ${planSelected}`);
   };
   return (
     <StContainer>
       <CommonLNBText>어떤 것을 만들고 싶으신가요?</CommonLNBText>
       <StBodyContainer>
-        <StContainer2
-          onPress={selectPlan}
-          style={{ borderColor: planSelected ? globalColor.primary : light.background }}
-        >
-          <StTextContainer>
-            <StTextMain
-              style={{ color: planSelected ? globalColor.primary : light.contents.contentMain }}
-            >
-              약속
-            </StTextMain>
-            <StTextSub
-              style={{ color: planSelected ? globalColor.primary : light.contents.contentMain }}
-            >
-              일회성 약속에 적합합니다.
-            </StTextSub>
-          </StTextContainer>
-          {planSelected && <CheckWithoutBox />}
-        </StContainer2>
-        <StContainer2
-          onPress={selectGroup}
-          style={{ borderColor: !planSelected ? globalColor.primary : light.background }}
-        >
-          <StTextContainer>
-            <StTextMain
-              style={{ color: !planSelected ? globalColor.primary : light.contents.contentMain }}
-            >
-              그룹
-            </StTextMain>
-            <StTextSub
-              style={{ color: !planSelected ? globalColor.primary : light.contents.contentMain }}
-            >
-              정기적 모임에 적합합니다.
-            </StTextSub>
-          </StTextContainer>
-          {!planSelected && <CheckWithoutBox />}
-        </StContainer2>
+        <StCardContainer>
+          <StCard
+            onPress={selectPlan}
+            style={{ borderColor: planSelected ? globalColor.primary : light.background }}
+          >
+            <StTextContainer>
+              <StTextMain
+                style={{ color: planSelected ? globalColor.primary : light.contents.contentMain }}
+              >
+                약속
+              </StTextMain>
+              <StTextSub
+                style={{ color: planSelected ? globalColor.primary : light.contents.contentMain }}
+              >
+                일회성 약속에 적합합니다.
+              </StTextSub>
+            </StTextContainer>
+            {planSelected && <CheckWithoutBox />}
+          </StCard>
+          <StCard
+            onPress={selectGroup}
+            style={{ borderColor: !planSelected ? globalColor.primary : light.background }}
+          >
+            <StTextContainer>
+              <StTextMain
+                style={{ color: !planSelected ? globalColor.primary : light.contents.contentMain }}
+              >
+                그룹
+              </StTextMain>
+              <StTextSub
+                style={{ color: !planSelected ? globalColor.primary : light.contents.contentMain }}
+              >
+                정기적 모임에 적합합니다.
+              </StTextSub>
+            </StTextContainer>
+            {!planSelected && <CheckWithoutBox />}
+          </StCard>
+          <StTextDetail>정기적 모임에 적합합니다.</StTextDetail>
+        </StCardContainer>
       </StBodyContainer>
       <StBottomContainer>
         <ButtonMain
@@ -87,15 +88,21 @@ const StContainer = styled.View`
   padding-top: 40px;
   gap: 28px;
 `;
-
 const StBodyContainer = styled.View`
   display: flex;
   width: 100%;
   height: 100%;
-  gap: 12px;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
+  padding-top: 16px;
+`;
+
+const StCardContainer = styled.View`
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 16px;
 `;
 
 const StBottomContainer = styled.View`
@@ -109,8 +116,7 @@ const StBottomContainer = styled.View`
   background-color: ${light.background};
 `;
 
-// ButtonCardComponent 스타일
-const StContainer2 = styled.Pressable`
+const StCard = styled.Pressable`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -134,5 +140,12 @@ const StTextMain = styled.Text`
 
 const StTextSub = styled.Text`
   ${paragraph.XS}
+`;
+
+const StTextDetail = styled.Text`
+  ${paragraph.XS}
+  color : ${light.contents.contentSub};
+  width: 100%;
+  top: -8px;
 `;
 export default CreateStartScreen;
