@@ -6,7 +6,9 @@ export interface Auth {
 export interface UserInfo {
   email?: string;
   social_id?: string;
-  nickname: string;
+  is_valid?: boolean;
+  is_profile?: boolean;
+  nickname?: string;
   description?: string;
   profile_color?: string;
 }
