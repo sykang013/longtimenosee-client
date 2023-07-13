@@ -19,13 +19,17 @@ const getScreen = Dimensions.get('window');
 const KakaoWebViewScreen = ({ navigation }: ScreenProps<'KakaoWebViewScreen'>) => {
   const setUserInfo = useSetRecoilState(userInfo);
   const webViewRef = useRef<WebView>(null);
-
   const webViewMessageHandler = (event: WebViewMessageEvent) => {
     const response = JSON.parse(event.nativeEvent.data) as ResponseData;
+    const { social_id, nickname, is_profile }: UserInfo = response.data;
     if (response.success) {
-      const { social_id, nickname }: UserInfo = response.data;
-      setUserInfo({ email: social_id, nickname: nickname });
-      navigation.navigate('MainPlanScreen');
+      if (!is_profile) {
+        setUserInfo({ email: social_id, is_profile: is_profile });
+        navigation.reset({ routes: [{ name: 'CreateProfileScreen' }] });
+      } else {
+        setUserInfo({ email: social_id, nickname: nickname, is_profile: is_profile });
+        navigation.navigate('MainScreen');
+      }
     } else {
       const error = response.error;
       Alert.alert(error);
@@ -53,6 +57,7 @@ const KakaoWebViewScreen = ({ navigation }: ScreenProps<'KakaoWebViewScreen'>) =
     <StContainer>
       <StWebView
         ref={webViewRef}
+        originWhitelist={['*']}
         source={{ uri: `${API_URL}/auth/kakao` }}
         javaScriptEnabled={true}
         onMessage={webViewMessageHandler}

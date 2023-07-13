@@ -32,16 +32,18 @@ const SignInScreen = ({ navigation }: ScreenProps<'SignInScreen'>) => {
         return;
       }
       const response = await signIn({ email: userEmail, password: password });
-      const { email, nickname } = response.data.data as UserInfo;
-      const isValid = response.data.data.is_valid;
+      const { email, nickname, is_valid, is_profile } = response.data.data as UserInfo;
 
       setUserInfo({
         email: email,
         nickname: nickname,
+        is_profile: is_profile,
       });
 
-      isValid && nickname
-        ? navigation.navigate('MainPlanScreen')
+      is_valid
+        ? is_profile
+          ? navigation.navigate('MainScreen')
+          : navigation.navigate('CreateProfileScreen')
         : navigation.navigate('EmailAuthenticationScreen');
     } catch (error: unknown) {
       const customError = error as CustomError;

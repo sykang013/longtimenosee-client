@@ -32,6 +32,7 @@ const CreateProfileScreen = ({ navigation }: ScreenProps<'CreateProfileScreen'>)
         nickname,
         description: description === '' ? '자기소개를 입력해보세요.' : description,
         profile_color: profileColor,
+        is_profile: true,
       });
 
       setUserInfo((prev) => ({
@@ -39,9 +40,10 @@ const CreateProfileScreen = ({ navigation }: ScreenProps<'CreateProfileScreen'>)
         nickname: response.data.data.nickname,
         description: response.data.data.description,
         profile_color: response.data.data.profile_color,
+        is_profile: response.data.data.is_profile,
       }));
 
-      navigation.navigate('MainPlanScreen');
+      navigation.navigate('MainScreen');
       Alert.alert('회원가입 완료', '회원가입을 축하드립니다!\n약속이나 그룹을 생성해보세요!', [
         { text: '확인' },
       ]);
