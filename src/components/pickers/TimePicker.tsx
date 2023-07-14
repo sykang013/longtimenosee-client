@@ -1,7 +1,7 @@
 import { label, light } from '@/assets/themes';
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import Picker from './Picker';
+import { Picker } from '@/components/pickers';
 
 const ITEM_HEIGHT = 32;
 
