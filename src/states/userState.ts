@@ -8,6 +8,7 @@ const userInfo = atom<UserInfo>({
     nickname: '',
     description: '',
     profile_color: '',
+    is_profile: false,
   },
 });
 
@@ -23,6 +24,7 @@ const userSignedIn = selector<boolean>({
       nickname: '',
       description: '',
       profile_color: '',
+      is_profile: false,
     });
   },
 });

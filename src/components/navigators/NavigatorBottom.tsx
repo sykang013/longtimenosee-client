@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { globalColor } from '@/assets/themes';
 import { NavigatorTop } from '@/components/navigators';
@@ -13,6 +13,10 @@ import {
   IconProfile,
   IconSearch,
 } from '@/assets/icons';
+import { TabProps } from '@/types';
+import { signOut } from '@/apis/auth';
+import { useSetRecoilState } from 'recoil';
+import { userSignedIn } from '@/states/userState';
 
 export type RootTabParamList = {
   HomeScreen: undefined;
@@ -20,6 +24,7 @@ export type RootTabParamList = {
   AddScreen: undefined;
   ChatScreen: undefined;
   MyInfoScreen: undefined;
+  AuthScreen: undefined;
 };
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -45,10 +50,25 @@ const Screen3 = () => {
     </View>
   );
 };
-const Screen4 = () => {
+
+const Screen4 = ({ navigation }: TabProps<'MyInfoScreen'>) => {
+  const setUserInfo = useSetRecoilState(userSignedIn);
+
+  const signOutHandler = async () => {
+    await signOut();
+    setUserInfo(false);
+    navigation.navigate('AuthScreen');
+  };
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>MyInfoScreen</Text>
+      <Pressable
+        onPress={() => void signOutHandler()}
+        style={{ backgroundColor: 'yellow', padding: 20 }}
+      >
+        <Text>로그아웃</Text>
+      </Pressable>
     </View>
   );
 };

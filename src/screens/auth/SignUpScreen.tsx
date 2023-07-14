@@ -5,11 +5,11 @@ import { Alert, Keyboard, TouchableWithoutFeedback, View } from 'react-native';
 import { globalColor, paragraph, light } from '@/assets/themes';
 import { ButtonCheckbox, ButtonMain } from '@/components/buttons';
 import { signIn, signUp } from '@/apis/auth';
-import { CustomError, ScreenProps } from '@/types';
+import { CustomError } from '@/types';
 import { useSetRecoilState } from 'recoil';
 import { userInfo } from '@/states/userState';
 
-const SignUpScreen = ({ navigation }: ScreenProps<'SignUpScreen'>) => {
+const SignUpScreen = () => {
   const [isEmailActive, setIsEmailActive] = useState(false);
   const [isPasswordActive, setIsPasswordActive] = useState(false);
   const [isPasswordConfirmActive, setIsPasswordConfirmActive] = useState(false);
@@ -49,7 +49,6 @@ const SignUpScreen = ({ navigation }: ScreenProps<'SignUpScreen'>) => {
       await signIn({ email, password });
 
       setUserInfo((prev) => ({ ...prev, email }));
-      navigation.navigate('EmailAuthenticationScreen');
     } catch (error) {
       const message = (error as CustomError).response?.data?.error?.message ?? error;
       Alert.alert('에러', `${message}`, [{ text: '확인' }]);

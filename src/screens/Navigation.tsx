@@ -41,7 +41,7 @@ const Navigation = () => {
 
 const NavigationContent = () => {
   const [isUserSignedIn] = useRecoilState(userSignedIn);
-  const { nickname } = useRecoilValue(userInfo);
+  const { is_profile } = useRecoilValue(userInfo);
 
   return (
     <Stack.Navigator initialRouteName="AuthScreen">
@@ -74,7 +74,7 @@ const NavigationContent = () => {
             options={{ headerShown: false }}
           />
         </>
-      ) : nickname ? (
+      ) : is_profile ? (
         <Stack.Screen
           name="MainScreen"
           component={NavigatorBottom}
