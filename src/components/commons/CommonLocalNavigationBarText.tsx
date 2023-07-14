@@ -7,18 +7,18 @@ interface StLocalNavigationBarTextProps {
   textColor?: string;
 }
 
-interface LocalNavigationBarTextProps extends StLocalNavigationBarTextProps {
+interface CommonLocalNavigationBarTextProps extends StLocalNavigationBarTextProps {
   backgroundColor?: string;
   height?: number;
   text: string;
 }
 
-const LocalNavigationBarText = ({
+const CommonLocalNavigationBarText = ({
   height = 40,
   backgroundColor = light.background,
   textColor = light.contents.contentMain,
   text,
-}: LocalNavigationBarTextProps) => {
+}: CommonLocalNavigationBarTextProps) => {
   return (
     <StCommonLocalNavigationBarText height={height} backgroundColor={backgroundColor}>
       <StLocalNavigationBarText textColor={textColor}>{text}</StLocalNavigationBarText>
@@ -26,9 +26,9 @@ const LocalNavigationBarText = ({
   );
 };
 
-export default LocalNavigationBarText;
+export default CommonLocalNavigationBarText;
 
-const StCommonLocalNavigationBarText = styled.View<Omit<LocalNavigationBarTextProps, 'text'>>`
+const StCommonLocalNavigationBarText = styled.View<Omit<CommonLocalNavigationBarTextProps, 'text'>>`
   display: flex;
   justify-content: center;
   width: 100%;

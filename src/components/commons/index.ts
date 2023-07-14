@@ -1,3 +1,3 @@
-import LocalNavigationBarText from './LocalNavigationBarText';
+import CommonLocalNavigationBarText from './CommonLocalNavigationBarText';
 
-export { LocalNavigationBarText };
+export { CommonLocalNavigationBarText };

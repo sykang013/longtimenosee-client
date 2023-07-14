@@ -3,7 +3,7 @@ import { verticalScale } from '@/utils/matric';
 import React from 'react';
 import styled from 'styled-components/native';
 import { ButtonMain } from '../buttons';
-import { LocalNavigationBarText } from '@/components/commons';
+import { CommonLocalNavigationBarText } from '@/components/commons';
 
 interface PlanContainerProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ const PlanContainer = ({
 }: PlanContainerProps) => {
   return (
     <StPlanContainer>
-      <LocalNavigationBarText text={navigationBarText} />
+      <CommonLocalNavigationBarText text={navigationBarText} />
       {children}
       <StButtonBox>
         <ButtonMain>{buttonText}</ButtonMain>
