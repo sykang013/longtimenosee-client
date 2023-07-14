@@ -1,21 +1,18 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { ButtonMain } from '@/components/buttons';
-import { CommonLNBText } from '@/components/common';
+import { CommonLocalNavigationBarText } from '@/components/commons';
 import { light } from '@/assets/themes';
-import { ScreenProps } from '@/types';
 
-const CreatePlanWriteTitleScreen = ({ navigation }: ScreenProps<'CreatePlanWriteTitleScreen'>) => {
+const PlanSetDateRangeScreen = () => {
   return (
     <StContainer>
-      <CommonLNBText>약속 제목을 적어보세요.</CommonLNBText>
+      <CommonLocalNavigationBarText>
+        응답받을 날짜 범위를 설정해 주세요.
+      </CommonLocalNavigationBarText>
       <StBodyContainer></StBodyContainer>
       <StBottomContainer>
-        <ButtonMain
-          buttonState="ActivePrimary"
-          width={328}
-          onPress={() => navigation.navigate('CreatePlanWriteIntroduceScreen')}
-        >
+        <ButtonMain buttonState="ActivePrimary" width={328}>
           다음
         </ButtonMain>
       </StBottomContainer>
@@ -51,4 +48,4 @@ const StBottomContainer = styled.View`
   background-color: ${light.background};
 `;
 
-export default CreatePlanWriteTitleScreen;
+export default PlanSetDateRangeScreen;

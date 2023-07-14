@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { ButtonMain } from '@/components/buttons';
-import { CommonLNBText } from '@/components/common';
+import { CommonLocalNavigationBarText } from '@/components/commons';
 import { light, label, paragraph, globalColor } from '@/assets/themes';
 import CheckWithoutBox from '@/assets/icons/CheckWithoutBox';
 import { ScreenProps } from '@/types';
@@ -16,7 +16,7 @@ const CreateStartScreen = ({ navigation }: ScreenProps<'CreateStartScreen'>) => 
   };
   return (
     <StContainer>
-      <CommonLNBText>어떤 것을 만들고 싶으신가요?</CommonLNBText>
+      <CommonLocalNavigationBarText>어떤 것을 만들고 싶으신가요?</CommonLocalNavigationBarText>
       <StBodyContainer>
         <StCardContainer>
           <StCard
@@ -62,7 +62,7 @@ const CreateStartScreen = ({ navigation }: ScreenProps<'CreateStartScreen'>) => 
         <ButtonMain
           buttonState="ActivePrimary"
           width={328}
-          onPress={() => navigation.navigate('CreatePlanWriteTitleScreen')}
+          onPress={() => navigation.navigate('PlanWriteTitleScreen')}
         >
           다음
         </ButtonMain>

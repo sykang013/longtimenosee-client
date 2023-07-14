@@ -3,32 +3,32 @@ import { TextProps } from 'react-native';
 import styled from 'styled-components/native';
 import { label, light } from '@/assets/themes';
 
-interface StLNBTextProps extends TextProps {
+interface StLocalNavigationBarTextProps extends TextProps {
   textColor?: string;
 }
 
-interface CommonLNBTextProps extends StLNBTextProps {
+interface CommonLocalNavigationBarTextProps extends StLocalNavigationBarTextProps {
   backgroundColor?: string;
   width?: string;
   height?: number;
   children?: ReactNode;
 }
 
-const CommonLNBText = ({
+const CommonLocalNavigationBarText = ({
   width = '100%',
   height = 40,
   backgroundColor = light.background,
   textColor = light.contents.contentMain,
   children = '텍스트를 입력해주세요.',
-}: CommonLNBTextProps) => {
+}: CommonLocalNavigationBarTextProps) => {
   return (
-    <StCommonLNBText width={width} height={height} backgroundColor={backgroundColor}>
-      <StLNBText textColor={textColor}>{children}</StLNBText>
-    </StCommonLNBText>
+    <StCommonLocalNavigationBarText width={width} height={height} backgroundColor={backgroundColor}>
+      <StLocalNavigationBarText textColor={textColor}>{children}</StLocalNavigationBarText>
+    </StCommonLocalNavigationBarText>
   );
 };
 
-const StCommonLNBText = styled.View<CommonLNBTextProps>`
+const StCommonLocalNavigationBarText = styled.View<CommonLocalNavigationBarTextProps>`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -36,7 +36,7 @@ const StCommonLNBText = styled.View<CommonLNBTextProps>`
   height: ${(props) => props.height}px;
   background-color: ${(props) => props.backgroundColor};
 `;
-const StLNBText = styled.Text<StLNBTextProps>`
+const StLocalNavigationBarText = styled.Text<StLocalNavigationBarTextProps>`
   color: ${(props) => props.textColor};
   ${label.Medium};
   position: relative;
@@ -45,4 +45,4 @@ const StLNBText = styled.Text<StLNBTextProps>`
   top: 4;
 `;
 
-export default CommonLNBText;
+export default CommonLocalNavigationBarText;
