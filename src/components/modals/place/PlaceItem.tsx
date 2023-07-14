@@ -2,18 +2,25 @@ import { light, paragraph } from '@/assets/themes';
 import React from 'react';
 import styled from 'styled-components/native';
 
-const PlaceItem = () => {
+interface PlaceItemProps {
+  address_name?: string;
+  place_name: string;
+  // eslint-disable-next-line no-unused-vars
+  selectPlaceHandler: (placeName: string) => void;
+}
+
+const PlaceItem = ({ address_name, place_name, selectPlaceHandler }: PlaceItemProps) => {
   return (
-    <StPlaceItem>
-      <StPlace>장소명</StPlace>
-      <StAddress>상세 주소 표기란</StAddress>
+    <StPlaceItem onPress={() => selectPlaceHandler(place_name)}>
+      <StPlace>{place_name}</StPlace>
+      <StAddress>{address_name}</StAddress>
     </StPlaceItem>
   );
 };
 
 export default PlaceItem;
 
-const StPlaceItem = styled.View`
+const StPlaceItem = styled.Pressable`
   width: 100%;
   height: 72px;
   padding: 0 24px;

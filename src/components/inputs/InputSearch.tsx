@@ -1,14 +1,32 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Keyboard, Platform, Pressable } from 'react-native';
 import { light, paragraph } from '@/assets/themes';
 import styled from 'styled-components/native';
 import { IconSearch } from '@/assets/icons';
 
-const InputSearch = () => {
+interface InputSearchProps {
+  value: string;
+  // eslint-disable-next-line no-unused-vars
+  onChangeText: (text: string) => void;
+  onPress: () => void;
+}
+const InputSearch = ({ value, onChangeText, onPress }: InputSearchProps) => {
+  const onPressSearchButtonHandler = () => {
+    onPress();
+    Keyboard.dismiss();
+  };
+
   return (
     <StInputContainer>
-      <StInput placeholder="장소를 검색해보세요." />
-      <IconSearch />
+      <StInput
+        placeholder="장소를 검색해보세요."
+        value={value}
+        onChangeText={onChangeText}
+        maxLength={20}
+      />
+      <Pressable onPress={onPressSearchButtonHandler}>
+        <IconSearch />
+      </Pressable>
     </StInputContainer>
   );
 };
