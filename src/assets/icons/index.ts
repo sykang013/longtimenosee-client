@@ -7,7 +7,7 @@ import IconHome from './IconHome';
 import IconLocation from './IconLocation';
 import IconNotification from './IconNotification';
 import IconProfile from './IconProfile';
-import IconSearch from './IconSearch';
+import IconSearchMedium from './IconSearchMedium';
 import IconClock from './IconClock';
 import IconClose from './IconClose';
 import IconLocationLarge from './IconLocationLarge';
@@ -15,6 +15,7 @@ import IconLocationMedium from './IconLocationMedium';
 import IconOnline from './IconOnline';
 import IconCheckFalse from './IconCheckFalse';
 import IconCheckTrue from './IconCheckTrue';
+import IconSearchSmall from './IconSearchSmall';
 
 export {
   IconCalendar,
@@ -26,7 +27,8 @@ export {
   IconLocation,
   IconNotification,
   IconProfile,
-  IconSearch,
+  IconSearchMedium,
+  IconSearchSmall,
   IconLocationLarge,
   IconLocationMedium,
   IconClose,

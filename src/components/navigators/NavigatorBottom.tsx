@@ -11,7 +11,7 @@ import {
   IconHome,
   IconNotification,
   IconProfile,
-  IconSearch,
+  IconSearchMedium,
 } from '@/assets/icons';
 
 export type RootTabParamList = {
@@ -87,7 +87,7 @@ const NavigatorBottom = () => {
                 height: verticalScale(40),
               }}
             >
-              <IconSearch />
+              <IconSearchMedium />
               <IconHamburger />
             </View>
           ),

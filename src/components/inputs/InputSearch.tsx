@@ -2,7 +2,7 @@ import React from 'react';
 import { Keyboard, Platform, Pressable } from 'react-native';
 import { light, paragraph } from '@/assets/themes';
 import styled from 'styled-components/native';
-import { IconSearch } from '@/assets/icons';
+import { IconSearchSmall } from '@/assets/icons';
 import { horizontalScale, verticalScale } from '@/utils/matric';
 
 interface InputSearchProps {
@@ -26,7 +26,7 @@ const InputSearch = ({ value, onChangeText, onPress }: InputSearchProps) => {
         maxLength={20}
       />
       <Pressable onPress={onPressSearchButtonHandler}>
-        <IconSearch />
+        <IconSearchSmall />
       </Pressable>
     </StInputContainer>
   );
