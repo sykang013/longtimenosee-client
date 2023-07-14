@@ -6,6 +6,7 @@ import { InputLine } from '@/components/inputs';
 import { PlaceModal } from '@/components/modals/place';
 import { IconLocationMedium, IconOnline } from '@/assets/icons';
 import PlanContainer from './PlanContainer';
+import { horizontalScale, verticalScale } from '@/utils/matric';
 
 const Place = () => {
   const [onlinePlace, setOnlinePlace] = useState('');
@@ -65,11 +66,11 @@ export default Place;
 
 const StContainer = styled.View`
   flex: 1;
-  padding: 24px 24px 0px 24px;
+  padding: ${verticalScale(24)}px ${horizontalScale(24)}px 0px ${horizontalScale(24)}px;
 `;
 
 const StButtonBox = styled.View`
   flex-direction: row;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: ${horizontalScale(8)}px;
+  margin-bottom: ${verticalScale(16)}px;
 `;

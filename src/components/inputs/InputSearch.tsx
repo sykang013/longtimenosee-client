@@ -3,6 +3,7 @@ import { Keyboard, Platform, Pressable } from 'react-native';
 import { light, paragraph } from '@/assets/themes';
 import styled from 'styled-components/native';
 import { IconSearch } from '@/assets/icons';
+import { horizontalScale, verticalScale } from '@/utils/matric';
 
 interface InputSearchProps {
   value: string;
@@ -35,20 +36,21 @@ export default InputSearch;
 
 const StInputContainer = styled.View`
   flex-direction: row;
-  width: 312px;
-  height: 40px;
+  width: ${horizontalScale(312)}px;
+  height: ${verticalScale(40)}px;
   border-radius: 4px;
-  padding: 9px 11px 9px 12px;
+  padding: ${verticalScale(9)}px ${horizontalScale(11)}px ${verticalScale(9)}px
+    ${horizontalScale(12)}px;
   background-color: ${light.backgroundSub};
   align-items: center;
 `;
 
 const StInput = styled.TextInput.attrs({ placeholderTextColor: light.contents.contentThird })`
-  height: 22px;
+  height: ${verticalScale(22)}px;
   color: ${light.contents.contentMain};
   ${paragraph.Small};
   padding: 0;
   line-height: ${Platform.OS === 'ios' ? 0 : paragraph.Small.lineHeight};
   flex-grow: 1;
-  margin-right: 11px;
+  margin-right: ${horizontalScale(11)}px;
 `;

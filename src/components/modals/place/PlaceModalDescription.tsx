@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { light, paragraph } from '@/assets/themes';
 import { IconLocationLarge } from '@/assets/icons';
+import { horizontalScale, verticalScale } from '@/utils/matric';
 
 const PlaceModalDescription = () => {
   return (
@@ -18,14 +19,14 @@ const PlaceModalDescription = () => {
 export default PlaceModalDescription;
 
 const StDescription = styled.View`
-  width: 236px;
-  height: 132px;
+  width: ${horizontalScale(236)}px;
+  height: ${verticalScale(132)}px;
   justify-content: center;
   align-items: center;
 `;
 
 const StDescriptionText = styled.Text`
-  margin-top: 12px;
+  margin-top: ${verticalScale(12)}px;
   color: ${light.contents.contentSub};
   text-align: center;
   ${paragraph.Small};

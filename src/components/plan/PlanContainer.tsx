@@ -1,8 +1,9 @@
 import { light } from '@/assets/themes';
+import { verticalScale } from '@/utils/matric';
 import React from 'react';
 import styled from 'styled-components/native';
 import { ButtonMain } from '../buttons';
-import LocalNavigationBarText from '../commons/LocalNavigationBarText';
+import { LocalNavigationBarText } from '@/components/commons';
 
 interface PlanContainerProps {
   children: React.ReactNode;
@@ -35,7 +36,7 @@ const StPlanContainer = styled.View`
 
 const StButtonBox = styled.View`
   width: 100%;
-  height: 60px;
+  height: ${verticalScale(60)}px;
   border-top-width: 1px;
   border-color: ${light.border.borderSub};
   background-color: ${light.background};

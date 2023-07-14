@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components/native';
 import { label, light, globalColor } from '@/assets/themes';
+import { horizontalScale, verticalScale } from '@/utils/matric';
 
 interface ButtonMainProps {
   buttonState?: 'InActivePrimary' | 'ActivePrimary' | 'Line' | 'BW';
@@ -73,8 +74,8 @@ const StButton = styled.Pressable<ButtonMainProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 152px;
-  height: 40px;
+  width: ${horizontalScale(152)}px;
+  height: ${verticalScale(40)}px;
   border-radius: 4px;
   border: ${(props) => props.border}px solid ${(props) => props.textColor};
   background-color: ${(props) => props.backgroundColor};

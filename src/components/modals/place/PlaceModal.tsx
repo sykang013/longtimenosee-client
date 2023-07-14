@@ -9,6 +9,7 @@ import { IconClose } from '@/assets/icons';
 import { searchPlace } from '@/apis/search';
 import { CustomError } from '@/types';
 import uuid from 'react-native-uuid';
+import { horizontalScale, verticalScale } from '@/utils/matric';
 
 interface PlaceModalProps {
   isVisible: boolean;
@@ -126,7 +127,7 @@ const StModalContainer = styled.View`
 `;
 
 const StPlaceModalContainer = styled.View`
-  height: 550px;
+  height: ${verticalScale(550)}px;
   align-items: center;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
@@ -135,17 +136,18 @@ const StPlaceModalContainer = styled.View`
 
 const StCloseInputContainer = styled.View`
   width: 100%;
-  padding: 8px 8px 24px 8px;
-  gap: 24px;
+  padding: ${verticalScale(8)}px ${horizontalScale(8)}px ${verticalScale(24)}px
+    ${horizontalScale(8)}px;
+  gap: ${verticalScale(24)}px;
   align-items: center;
 `;
 
 const StClose = styled.View`
   width: 100%;
-  height: 40px;
+  height: ${verticalScale(40)}px;
   justify-content: center;
   align-items: flex-end;
-  padding-right: 13px;
+  padding-right: ${horizontalScale(13)}px;
 `;
 
 const StSearchResultList = styled(FlatList<Place>)`

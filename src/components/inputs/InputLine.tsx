@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { label, light, paragraph } from '@/assets/themes';
 import { Platform } from 'react-native';
+import { horizontalScale, verticalScale } from '@/utils/matric';
 
 interface StLabelEndProps {
   isActive: boolean;
@@ -73,24 +74,25 @@ const InputLine = ({
 export default InputLine;
 
 const StContainer = styled.Pressable`
-  width: 312px;
+  width: ${horizontalScale(312)}px;
 `;
 
 const StInputContainer = styled.View<StInputContainerProps>`
   width: 100%;
-  height: 40px;
+  height: ${verticalScale(40)}px;
   display: flex;
   flex-direction: row;
   border-bottom-width: 1px;
-  padding-top: ${(props) => (props.children ? '8px' : '9px')};
-  padding-bottom: ${(props) => (props.children ? '8px' : '9px')};
+  padding-top: ${(props) => (props.children ? `${verticalScale(8)}px` : `${verticalScale(9)}px`)};
+  padding-bottom: ${(props) =>
+    props.children ? `${verticalScale(8)}px` : `${verticalScale(9)}px`};
   border-color: ${(props) =>
     props.isActive || props.selected ? light.contents.contentMain : light.contents.contentThird};
   box-sizing: border-box;
 `;
 
 const StLabel = styled.Text`
-  width: 60px;
+  width: ${horizontalScale(60)}px;
   color: ${light.contents.contentMain};
   vertical-align: middle;
   padding: 0;
@@ -112,16 +114,16 @@ const StLabelEnd = styled.Text<StLabelEndProps>`
 `;
 
 const StCount = styled.Text`
-  margin-top: 4px;
+  margin-top: ${verticalScale(4)}px;
   align-self: flex-end;
   color: ${light.contents.contentSub};
   ${paragraph.XS};
 `;
 
 const StIconBox = styled.View`
-  width: 24px;
-  height: 24px;
+  width: ${horizontalScale(24)}px;
+  height: ${verticalScale(24)}px;
   justify-content: center;
   align-items: center;
-  margin-right: 4px;
+  margin-right: ${verticalScale(4)}px;
 `;

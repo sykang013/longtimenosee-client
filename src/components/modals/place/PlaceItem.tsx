@@ -1,4 +1,5 @@
 import { light, paragraph } from '@/assets/themes';
+import { horizontalScale, verticalScale } from '@/utils/matric';
 import React from 'react';
 import styled from 'styled-components/native';
 
@@ -22,8 +23,8 @@ export default PlaceItem;
 
 const StPlaceItem = styled.Pressable`
   width: 100%;
-  height: 72px;
-  padding: 0 24px;
+  height: ${verticalScale(72)}px;
+  padding: 0 ${horizontalScale(24)}px;
   justify-content: center;
   border-bottom-width: 1px;
   border-color: ${light.backgroundSub};

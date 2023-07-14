@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { label, light } from '@/assets/themes';
+import { horizontalScale, verticalScale } from '@/utils/matric';
 
 interface StLocalNavigationBarTextProps {
   textColor?: string;
@@ -8,20 +9,18 @@ interface StLocalNavigationBarTextProps {
 
 interface LocalNavigationBarTextProps extends StLocalNavigationBarTextProps {
   backgroundColor?: string;
-  width?: string;
   height?: number;
   text: string;
 }
 
 const LocalNavigationBarText = ({
-  width = '100%',
   height = 40,
   backgroundColor = light.background,
   textColor = light.contents.contentMain,
   text,
 }: LocalNavigationBarTextProps) => {
   return (
-    <StCommonLocalNavigationBarText width={width} height={height} backgroundColor={backgroundColor}>
+    <StCommonLocalNavigationBarText height={height} backgroundColor={backgroundColor}>
       <StLocalNavigationBarText textColor={textColor}>{text}</StLocalNavigationBarText>
     </StCommonLocalNavigationBarText>
   );
@@ -32,10 +31,11 @@ export default LocalNavigationBarText;
 const StCommonLocalNavigationBarText = styled.View<Omit<LocalNavigationBarTextProps, 'text'>>`
   display: flex;
   justify-content: center;
-  width: ${(props) => props.width};
-  height: ${(props) => props.height}px;
+  width: 100%;
+  height: ${(props) => verticalScale(props.height!)}px;
   background-color: ${(props) => props.backgroundColor};
-  padding: 12px 20px 4px 20px;
+  padding: ${verticalScale(12)}px ${horizontalScale(20)}px ${verticalScale(4)}px
+    ${horizontalScale(20)}px;
   border-bottom-width: 1px;
   border-color: ${light.border.borderSub};
 `;

@@ -6,6 +6,7 @@ import { InputLine } from '@/components/inputs';
 import { IconClock } from '@/assets/icons';
 import Modal from 'react-native-modal';
 import TimePicker from '@/components/pickers/TimePicker';
+import { horizontalScale, verticalScale } from '@/utils/matric';
 
 const Time = () => {
   const [timeAfter, setTimeAfter] = useState('');
@@ -78,7 +79,7 @@ export default Time;
 
 const StPickerContainer = styled.View`
   flex: 1;
-  padding: 20px 20px 0 20px;
+  padding: ${verticalScale(20)}px ${horizontalScale(20)}px 0 ${horizontalScale(20)}px;
   align-items: center;
-  gap: 38px;
+  gap: ${verticalScale(38)}px;
 `;
