@@ -8,7 +8,7 @@ import Modal from 'react-native-modal';
 import TimePicker from '@/components/pickers/TimePicker';
 import { horizontalScale, verticalScale } from '@/utils/matric';
 
-const Time = () => {
+const PlanTime = () => {
   const [timeAfter, setTimeAfter] = useState('');
   const [timeBefore, setTimeBefore] = useState('');
   const [isTimeAfterModal, setIsTimeAfterModal] = useState(false);
@@ -75,7 +75,7 @@ const Time = () => {
   );
 };
 
-export default Time;
+export default PlanTime;
 
 const StPickerContainer = styled.View`
   flex: 1;

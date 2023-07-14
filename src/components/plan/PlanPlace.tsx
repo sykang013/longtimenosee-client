@@ -8,7 +8,7 @@ import { IconLocationMedium, IconOnline } from '@/assets/icons';
 import PlanContainer from './PlanContainer';
 import { horizontalScale, verticalScale } from '@/utils/matric';
 
-const Place = () => {
+const PlanPlace = () => {
   const [onlinePlace, setOnlinePlace] = useState('');
   const [offlinePlace, setOfflinePlace] = useState('');
   const [isModal, setIsModal] = useState(false);
@@ -62,7 +62,7 @@ const Place = () => {
   );
 };
 
-export default Place;
+export default PlanPlace;
 
 const StContainer = styled.View`
   flex: 1;

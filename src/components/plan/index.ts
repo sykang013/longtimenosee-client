@@ -1,4 +1,4 @@
-import Place from './Place';
-import Time from './Time';
+import PlanPlace from './PlanPlace';
+import PlanTime from './PlanTime';
 
-export { Place, Time };
+export { PlanPlace, PlanTime };
