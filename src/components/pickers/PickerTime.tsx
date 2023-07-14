@@ -5,14 +5,14 @@ import { Picker } from '@/components/pickers';
 
 const ITEM_HEIGHT = 32;
 
-interface TimePickerProps {
+interface PickerTimeProps {
   // eslint-disable-next-line no-unused-vars
   onChange: (value: string) => void;
   isVisible: boolean;
   closeModal: () => void;
 }
 
-const TimePicker = ({ onChange, closeModal }: TimePickerProps) => {
+const PickerTime = ({ onChange, closeModal }: PickerTimeProps) => {
   const [currentAmpm, setCurrentAmpm] = useState(0);
   const [currentHours, setCurrentHours] = useState(0);
   const [currentMinutes, setCurrentMinutes] = useState(0);
@@ -82,7 +82,7 @@ const TimePicker = ({ onChange, closeModal }: TimePickerProps) => {
   );
 };
 
-export default TimePicker;
+export default PickerTime;
 
 const StModalContainer = styled.View`
   flex: 1;

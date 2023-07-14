@@ -1,4 +1,4 @@
 import Picker from './Picker';
-import TimePicker from './TimePicker';
+import PickerTime from './PickerTime';
 
-export { Picker, TimePicker };
+export { Picker, PickerTime };

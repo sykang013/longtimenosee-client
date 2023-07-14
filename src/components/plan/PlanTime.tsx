@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 import { InputLine } from '@/components/inputs';
 import { IconClock } from '@/assets/icons';
 import Modal from 'react-native-modal';
-import TimePicker from '@/components/pickers/TimePicker';
+import { PickerTime } from '@/components/pickers';
 import { horizontalScale, verticalScale } from '@/utils/matric';
 
 const PlanTime = () => {
@@ -36,14 +36,14 @@ const PlanTime = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <StPickerContainer>
           <Modal isVisible={isTimeAfterModal} backdropColor="transparent" style={{ margin: 0 }}>
-            <TimePicker
+            <PickerTime
               onChange={(value) => validateTimeHandler(value, timeBefore, setTimeAfter)}
               isVisible={isTimeAfterModal}
               closeModal={() => setIsTimeAfterModal(false)}
             />
           </Modal>
           <Modal isVisible={isTimeBeforeModal} backdropColor="transparent" style={{ margin: 0 }}>
-            <TimePicker
+            <PickerTime
               onChange={(value) => validateTimeHandler(value, timeAfter, setTimeBefore)}
               isVisible={isTimeBeforeModal}
               closeModal={() => setIsTimeBeforeModal(false)}
