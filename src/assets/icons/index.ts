@@ -1,6 +1,3 @@
-import CheckFalseGray from './CheckFalseGray';
-import CheckFalsePrimary from './CheckFalsePrimary';
-import CheckTrue from './CheckTrue';
 import IconCalendar from './IconCalendar';
 import IconChat from './IconChat';
 import IconCreate from './IconCreate';
@@ -11,11 +8,15 @@ import IconLocation from './IconLocation';
 import IconNotification from './IconNotification';
 import IconProfile from './IconProfile';
 import IconSearch from './IconSearch';
+import IconClock from './IconClock';
+import IconClose from './IconClose';
+import IconLocationLarge from './IconLocationLarge';
+import IconLocationMedium from './IconLocationMedium';
+import IconOnline from './IconOnline';
+import IconCheckFalse from './IconCheckFalse';
+import IconCheckTrue from './IconCheckTrue';
 
 export {
-  CheckFalseGray,
-  CheckFalsePrimary,
-  CheckTrue,
   IconCalendar,
   IconChat,
   IconCreate,
@@ -26,4 +27,11 @@ export {
   IconNotification,
   IconProfile,
   IconSearch,
+  IconLocationLarge,
+  IconLocationMedium,
+  IconClose,
+  IconOnline,
+  IconClock,
+  IconCheckFalse,
+  IconCheckTrue,
 };
