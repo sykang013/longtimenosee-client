@@ -31,7 +31,7 @@ const Time = () => {
   };
 
   return (
-    <PlanContainer navigationBarText="응답받을 시간 범위를 설정해 주세요.">
+    <PlanContainer navigationBarText="응답받을 시간 범위를 설정해 주세요." buttonText="확인">
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <StPickerContainer>
           <Modal isVisible={isTimeAfterModal} backdropColor="transparent" style={{ margin: 0 }}>
