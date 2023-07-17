@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import { label, light, globalColor } from '@/assets/themes';
 import { horizontalScale, verticalScale } from '@/utils/metric';
 
-interface ButtonMainProps {
+interface ButtonSmallProps {
   buttonState?: 'InActivePrimary' | 'ActivePrimary' | 'Line' | 'BW';
   backgroundColor?: string;
   borderRadius?: number;
@@ -14,11 +14,7 @@ interface ButtonMainProps {
   textColor?: string;
 }
 
-interface ButtonTextProps {
-  textColor?: string;
-}
-
-const ButtonMain = ({
+const ButtonSmall = ({
   buttonState,
   backgroundColor,
   borderRadius = 4,
@@ -28,7 +24,7 @@ const ButtonMain = ({
   textColor,
   disabled = false,
   ...rest
-}: ButtonMainProps) => {
+}: ButtonSmallProps) => {
   switch (buttonState) {
     case 'InActivePrimary':
       backgroundColor = globalColor.blue[200];
@@ -70,7 +66,7 @@ const ButtonMain = ({
   );
 };
 
-const StButton = styled.Pressable<ButtonMainProps>`
+const StButton = styled.Pressable<ButtonSmallProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,9 +77,9 @@ const StButton = styled.Pressable<ButtonMainProps>`
   background-color: ${(props) => props.backgroundColor};
 `;
 
-const StButtonText = styled.Text<ButtonTextProps>`
+const StButtonText = styled.Text<Pick<ButtonSmallProps, 'textColor'>>`
   color: ${(props) => props.textColor};
   ${label.Small};
 `;
 
-export default ButtonMain;
+export default ButtonSmall;
