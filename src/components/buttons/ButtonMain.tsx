@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
-import { PressableProps, TextProps } from 'react-native';
+import { PressableProps } from 'react-native';
 import styled from 'styled-components/native';
 import { label, light, globalColor } from '@/assets/themes';
+
 interface ButtonMainProps extends PressableProps {
   buttonState?: 'InActivePrimary' | 'ActivePrimary' | 'Line' | 'BW';
   backgroundColor?: string;
@@ -14,12 +15,8 @@ interface ButtonMainProps extends PressableProps {
   textColor?: string;
 }
 
-interface ButtonTextProps extends TextProps {
-  textColor?: string;
-}
-
 const ButtonMain = ({
-  buttonState,
+  buttonState = 'ActivePrimary',
   backgroundColor,
   width = 328,
   height = 44,
@@ -79,7 +76,7 @@ const StButton = styled.Pressable<ButtonMainProps>`
   background-color: ${(props) => props.backgroundColor};
 `;
 
-const StButtonText = styled.Text<ButtonTextProps>`
+const StButtonText = styled.Text<Pick<ButtonMainProps, 'textColor'>>`
   color: ${(props) => props.textColor};
   ${label.Small};
 `;
