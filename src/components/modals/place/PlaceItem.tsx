@@ -1,5 +1,5 @@
 import { light, paragraph } from '@/assets/themes';
-import { horizontalScale, verticalScale } from '@/utils/matric';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 import React from 'react';
 import styled from 'styled-components/native';
 

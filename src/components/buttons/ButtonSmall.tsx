@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components/native';
 import { label, light, globalColor } from '@/assets/themes';
-import { horizontalScale, verticalScale } from '@/utils/matric';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 
 interface ButtonMainProps {
   buttonState?: 'InActivePrimary' | 'ActivePrimary' | 'Line' | 'BW';

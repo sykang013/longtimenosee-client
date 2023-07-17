@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components/native';
 import { label, light, paragraph } from '@/assets/themes';
 import { Platform } from 'react-native';
-import { horizontalScale, verticalScale } from '@/utils/matric';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 
 interface StLabelEndProps {
   isActive: boolean;

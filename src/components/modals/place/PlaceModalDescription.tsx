@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { light, paragraph } from '@/assets/themes';
 import { IconLocationLarge } from '@/assets/icons';
-import { horizontalScale, verticalScale } from '@/utils/matric';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 
 const PlaceModalDescription = () => {
   return (

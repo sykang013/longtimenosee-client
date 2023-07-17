@@ -1,5 +1,5 @@
 import { light } from '@/assets/themes';
-import { verticalScale } from '@/utils/matric';
+import { verticalScale } from '@/utils/metric';
 import React from 'react';
 import styled from 'styled-components/native';
 import { ButtonMain } from '../buttons';

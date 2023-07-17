@@ -9,7 +9,7 @@ import { IconClose } from '@/assets/icons';
 import { searchPlace } from '@/apis/search';
 import { CustomError } from '@/types';
 import uuid from 'react-native-uuid';
-import { horizontalScale, verticalScale } from '@/utils/matric';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 
 interface PlaceModalProps {
   isVisible: boolean;

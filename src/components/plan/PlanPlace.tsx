@@ -6,7 +6,7 @@ import { InputLine } from '@/components/inputs';
 import { PlaceModal } from '@/components/modals/place';
 import { IconLocationMedium, IconOnline } from '@/assets/icons';
 import PlanContainer from './PlanContainer';
-import { horizontalScale, verticalScale } from '@/utils/matric';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 
 const PlanPlace = () => {
   const [onlinePlace, setOnlinePlace] = useState('');

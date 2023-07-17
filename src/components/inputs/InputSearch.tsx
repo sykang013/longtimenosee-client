@@ -3,7 +3,7 @@ import { Keyboard, Platform, Pressable } from 'react-native';
 import { light, paragraph } from '@/assets/themes';
 import styled from 'styled-components/native';
 import { IconSearchSmall } from '@/assets/icons';
-import { horizontalScale, verticalScale } from '@/utils/matric';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 
 interface InputSearchProps {
   value: string;

@@ -6,7 +6,7 @@ import { InputLine } from '@/components/inputs';
 import { IconClock } from '@/assets/icons';
 import Modal from 'react-native-modal';
 import { PickerTime } from '@/components/pickers';
-import { horizontalScale, verticalScale } from '@/utils/matric';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 
 const PlanTime = () => {
   const [timeAfter, setTimeAfter] = useState('');

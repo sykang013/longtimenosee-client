@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { label, light } from '@/assets/themes';
-import { horizontalScale, verticalScale } from '@/utils/matric';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 
 interface StLocalNavigationBarTextProps {
   textColor?: string;
