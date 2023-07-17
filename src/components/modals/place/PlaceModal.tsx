@@ -2,7 +2,13 @@ import React, { useState } from 'react';
 import { label, light } from '@/assets/themes';
 import Modal from 'react-native-modal';
 import styled from 'styled-components/native';
-import { FlatList, ListRenderItemInfo, Alert } from 'react-native';
+import {
+  FlatList,
+  ListRenderItemInfo,
+  Alert,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from 'react-native';
 import { PlaceModalDescription, PlaceItem } from '@/components/modals/place';
 import { InputSearch } from '@/components/inputs';
 import { IconClose } from '@/assets/icons';
@@ -91,31 +97,33 @@ const PlaceModal = ({ isVisible, closeModal, changePlaceHandler }: PlaceModalPro
 
   return (
     <Modal isVisible={isVisible} backdropColor={light.dim} style={{ margin: 0 }}>
-      <StModalContainer>
-        <StPlaceModalContainer>
-          <StCloseInputContainer>
-            <StHeader>
-              <StModalTitle>장소 검색</StModalTitle>
-            </StHeader>
-            <StClose onPress={closeModal}>
-              <IconClose />
-            </StClose>
-            <InputSearch
-              value={placeSearchKeyword}
-              onChangeText={(text: string) => setPlaceSearchKeyword(text)}
-              onPress={pressSearchButtonHandler}
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <StModalContainer>
+          <StPlaceModalContainer>
+            <StCloseInputContainer>
+              <StHeader>
+                <StModalTitle>장소 검색</StModalTitle>
+              </StHeader>
+              <StClose onPress={closeModal}>
+                <IconClose />
+              </StClose>
+              <InputSearch
+                value={placeSearchKeyword}
+                onChangeText={(text: string) => setPlaceSearchKeyword(text)}
+                onPress={pressSearchButtonHandler}
+              />
+            </StCloseInputContainer>
+            {searchResult.length === 0 && <PlaceModalDescription />}
+            <StSearchResultList
+              data={searchResult}
+              renderItem={renderSearchResultItem}
+              showsVerticalScrollIndicator={false}
+              onEndReached={() => void searchPlaceHandler(placeSearchKeyword, page)}
+              onEndReachedThreshold={0.8}
             />
-          </StCloseInputContainer>
-          {searchResult.length === 0 && <PlaceModalDescription />}
-          <StSearchResultList
-            data={searchResult}
-            renderItem={renderSearchResultItem}
-            showsVerticalScrollIndicator={false}
-            onEndReached={() => void searchPlaceHandler(placeSearchKeyword, page)}
-            onEndReachedThreshold={0.8}
-          />
-        </StPlaceModalContainer>
-      </StModalContainer>
+          </StPlaceModalContainer>
+        </StModalContainer>
+      </TouchableWithoutFeedback>
     </Modal>
   );
 };
