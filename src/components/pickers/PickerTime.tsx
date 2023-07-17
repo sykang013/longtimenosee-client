@@ -91,7 +91,7 @@ const StModalContainer = styled.View`
 
 const StModal = styled.View`
   background-color: ${light.background};
-  padding: 47.97px 18px;
+  padding: 48px 18px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   position: relative;
