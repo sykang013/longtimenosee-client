@@ -12,7 +12,7 @@ const PlanPlace = () => {
   const [onlinePlace, setOnlinePlace] = useState('');
   const [offlinePlace, setOfflinePlace] = useState('');
   const [isModal, setIsModal] = useState(false);
-  const [onoffline, setOnoffline] = useState<'online' | 'offline'>('offline');
+  const [isOffline, setIsOffline] = useState(true);
 
   return (
     <PlanContainer navigationBarText="어디서 만나나요?">
@@ -25,19 +25,19 @@ const PlanPlace = () => {
           />
           <StButtonBox>
             <ButtonSmall
-              buttonState={onoffline === 'offline' ? 'ActivePrimary' : 'Line'}
-              onPress={() => setOnoffline('offline')}
+              buttonState={isOffline ? 'ActivePrimary' : 'Line'}
+              onPress={() => setIsOffline(true)}
             >
               오프라인
             </ButtonSmall>
             <ButtonSmall
-              buttonState={onoffline === 'online' ? 'ActivePrimary' : 'Line'}
-              onPress={() => setOnoffline('online')}
+              buttonState={!isOffline ? 'ActivePrimary' : 'Line'}
+              onPress={() => setIsOffline(false)}
             >
               온라인
             </ButtonSmall>
           </StButtonBox>
-          {onoffline === 'offline' && (
+          {isOffline && (
             <InputLine
               placeholder="장소를 입력해보세요."
               value={onlinePlace}
@@ -47,7 +47,7 @@ const PlanPlace = () => {
               <IconLocationMedium />
             </InputLine>
           )}
-          {onoffline === 'online' && (
+          {!isOffline && (
             <InputLine
               placeholder="(선택사항) 링크정보를 입력해보세요."
               value={offlinePlace}
