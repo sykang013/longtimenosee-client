@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { light } from '@/assets/themes';
+import { label, light } from '@/assets/themes';
 import Modal from 'react-native-modal';
 import styled from 'styled-components/native';
-import { Pressable, FlatList, ListRenderItemInfo, Alert } from 'react-native';
+import { FlatList, ListRenderItemInfo, Alert } from 'react-native';
 import { PlaceModalDescription, PlaceItem } from '@/components/modals/place';
 import { InputSearch } from '@/components/inputs';
 import { IconClose } from '@/assets/icons';
@@ -94,10 +94,11 @@ const PlaceModal = ({ isVisible, closeModal, changePlaceHandler }: PlaceModalPro
       <StModalContainer>
         <StPlaceModalContainer>
           <StCloseInputContainer>
-            <StClose>
-              <Pressable onPress={closeModal}>
-                <IconClose />
-              </Pressable>
+            <StHeader>
+              <StModalTitle>장소 검색</StModalTitle>
+            </StHeader>
+            <StClose onPress={closeModal}>
+              <IconClose />
             </StClose>
             <InputSearch
               value={placeSearchKeyword}
@@ -142,12 +143,23 @@ const StCloseInputContainer = styled.View`
   align-items: center;
 `;
 
-const StClose = styled.View`
+const StHeader = styled.View`
   width: 100%;
   height: ${verticalScale(40)}px;
+  flex-direction: row;
   justify-content: center;
-  align-items: flex-end;
-  padding-right: ${horizontalScale(13)}px;
+  align-items: center;
+`;
+
+const StModalTitle = styled.Text`
+  color: ${light.contents.contentMain};
+  ${label.Small};
+`;
+
+const StClose = styled.Pressable`
+  position: absolute;
+  top: ${verticalScale(21)}px;
+  right: ${horizontalScale(21)}px;
 `;
 
 const StSearchResultList = styled(FlatList<Place>)`
