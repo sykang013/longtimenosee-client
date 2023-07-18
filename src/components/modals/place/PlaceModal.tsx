@@ -96,7 +96,12 @@ const PlaceModal = ({ isVisible, closeModal, changePlaceHandler }: PlaceModalPro
   };
 
   return (
-    <Modal isVisible={isVisible} backdropColor={light.dim} style={{ margin: 0 }}>
+    <Modal
+      isVisible={isVisible}
+      backdropColor={light.dim}
+      style={{ margin: 0 }}
+      statusBarTranslucent={true}
+    >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <StModalContainer>
           <StPlaceModalContainer>
