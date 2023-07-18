@@ -27,8 +27,6 @@ const PlanContainer = ({
   );
 };
 
-export default PlanContainer;
-
 const StPlanContainer = styled.View`
   flex: 1;
   justify-content: space-between;
@@ -43,3 +41,5 @@ const StButtonBox = styled.View`
   justify-content: center;
   align-items: center;
 `;
+
+export default PlanContainer;

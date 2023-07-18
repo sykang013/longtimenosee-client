@@ -75,11 +75,11 @@ const PlanTime = () => {
   );
 };
 
-export default PlanTime;
-
 const StPickerContainer = styled.View`
   flex: 1;
   padding: ${verticalScale(20)}px ${horizontalScale(20)}px 0 ${horizontalScale(20)}px;
   align-items: center;
   gap: ${verticalScale(38)}px;
 `;
+
+export default PlanTime;

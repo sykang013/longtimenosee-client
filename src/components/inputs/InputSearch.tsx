@@ -32,8 +32,6 @@ const InputSearch = ({ value, onChangeText, onPress }: InputSearchProps) => {
   );
 };
 
-export default InputSearch;
-
 const StInputContainer = styled.View`
   flex-direction: row;
   width: ${horizontalScale(312)}px;
@@ -54,3 +52,5 @@ const StInput = styled.TextInput.attrs({ placeholderTextColor: light.contents.co
   flex-grow: 1;
   margin-right: ${horizontalScale(11)}px;
 `;
+
+export default InputSearch;

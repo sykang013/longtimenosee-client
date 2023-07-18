@@ -19,8 +19,6 @@ const PlaceItem = ({ address_name, place_name, selectPlaceHandler }: PlaceItemPr
   );
 };
 
-export default PlaceItem;
-
 const StPlaceItem = styled.Pressable`
   width: 100%;
   height: ${verticalScale(72)}px;
@@ -39,3 +37,5 @@ const StAddress = styled.Text`
   color: ${light.contents.contentSub};
   ${paragraph.XS};
 `;
+
+export default PlaceItem;

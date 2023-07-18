@@ -62,8 +62,6 @@ const PlanPlace = () => {
   );
 };
 
-export default PlanPlace;
-
 const StContainer = styled.View`
   flex: 1;
   padding: ${verticalScale(24)}px ${horizontalScale(24)}px 0px ${horizontalScale(24)}px;
@@ -74,3 +72,5 @@ const StButtonBox = styled.View`
   gap: ${horizontalScale(8)}px;
   margin-bottom: ${verticalScale(16)}px;
 `;
+
+export default PlanPlace;

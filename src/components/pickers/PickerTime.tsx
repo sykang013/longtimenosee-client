@@ -82,8 +82,6 @@ const PickerTime = ({ onChange, closeModal }: PickerTimeProps) => {
   );
 };
 
-export default PickerTime;
-
 const StModalContainer = styled.View`
   flex: 1;
   justify-content: flex-end;
@@ -124,3 +122,5 @@ const StIndicatorHolder = styled.View`
 const StFlatListContainer = styled.View`
   flex-direction: row;
 `;
+
+export default PickerTime;

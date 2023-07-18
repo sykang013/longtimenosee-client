@@ -161,8 +161,6 @@ const SignUpScreen = ({ navigation }: ScreenProps<'SignUpScreen'>) => {
   );
 };
 
-export default SignUpScreen;
-
 const StContainer = styled.ScrollView.attrs(() => ({
   contentContainerStyle: {
     alignItems: 'center',
@@ -195,3 +193,5 @@ const StInfoText = styled.Text`
   color: ${globalColor.primary};
   ${paragraph.XS}
 `;
+
+export default SignUpScreen;

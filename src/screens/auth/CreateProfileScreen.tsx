@@ -80,8 +80,6 @@ const CreateProfileScreen = ({ navigation }: ScreenProps<'CreateProfileScreen'>)
   );
 };
 
-export default CreateProfileScreen;
-
 const StContainer = styled.View`
   flex: 1;
   align-items: center;
@@ -105,3 +103,5 @@ const StProfileText = styled.Text`
   color: ${globalColor.white};
   ${heading.XXXL}
 `;
+
+export default CreateProfileScreen;

@@ -128,8 +128,6 @@ const PlaceModal = ({ isVisible, closeModal, changePlaceHandler }: PlaceModalPro
   );
 };
 
-export default PlaceModal;
-
 const StModalContainer = styled.View`
   flex: 1;
   justify-content: flex-end;
@@ -173,3 +171,5 @@ const StClose = styled.Pressable`
 const StSearchResultList = styled(FlatList<Place>)`
   width: 100%;
 `;
+
+export default PlaceModal;

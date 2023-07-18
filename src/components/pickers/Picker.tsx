@@ -80,8 +80,6 @@ const Picker = ({ items, onIndexChange, itemHeight }: PickerProps) => {
   );
 };
 
-export default Picker;
-
 const StFlatList = styled(Animated.FlatList<string>)<Pick<PickerProps, 'itemHeight'>>`
   padding-top: ${(props) => props.itemHeight}px;
 `;
@@ -96,3 +94,5 @@ const StAnimatedPickerContainer = styled(Animated.View)<Pick<PickerProps, 'itemH
   justify-content: center;
   align-items: center;
 `;
+
+export default Picker;

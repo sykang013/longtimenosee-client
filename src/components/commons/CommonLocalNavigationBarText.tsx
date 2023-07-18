@@ -26,8 +26,6 @@ const CommonLocalNavigationBarText = ({
   );
 };
 
-export default CommonLocalNavigationBarText;
-
 const StCommonLocalNavigationBarText = styled.View<Omit<CommonLocalNavigationBarTextProps, 'text'>>`
   display: flex;
   justify-content: center;
@@ -44,3 +42,5 @@ const StLocalNavigationBarText = styled.Text<StLocalNavigationBarTextProps>`
   color: ${(props) => props.textColor};
   ${label.Medium};
 `;
+
+export default CommonLocalNavigationBarText;

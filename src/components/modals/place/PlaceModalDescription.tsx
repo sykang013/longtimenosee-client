@@ -16,8 +16,6 @@ const PlaceModalDescription = () => {
   );
 };
 
-export default PlaceModalDescription;
-
 const StDescription = styled.View`
   width: ${horizontalScale(236)}px;
   height: ${verticalScale(132)}px;
@@ -31,3 +29,5 @@ const StDescriptionText = styled.Text`
   text-align: center;
   ${paragraph.Small};
 `;
+
+export default PlaceModalDescription;

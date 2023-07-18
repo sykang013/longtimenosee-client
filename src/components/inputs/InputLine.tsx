@@ -71,8 +71,6 @@ const InputLine = ({
   );
 };
 
-export default InputLine;
-
 const StContainer = styled.Pressable`
   width: ${horizontalScale(312)}px;
 `;
@@ -127,3 +125,5 @@ const StIconBox = styled.View`
   align-items: center;
   margin-right: ${verticalScale(4)}px;
 `;
+
+export default InputLine;

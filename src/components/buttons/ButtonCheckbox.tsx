@@ -41,8 +41,6 @@ const ButtonCheckbox = ({
   );
 };
 
-export default ButtonCheckbox;
-
 const StButtonCheckboxContainer = styled.View`
   width: 312px;
   height: 36px;
@@ -69,3 +67,5 @@ const StTextDetails = styled.Text`
   color: ${light.contents.contentThird};
   ${paragraph.XS};
 `;
+
+export default ButtonCheckbox;
