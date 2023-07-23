@@ -15,8 +15,6 @@ const ButtonAssist = ({ title, onPress }: ButtonAssistProps) => {
   );
 };
 
-export default ButtonAssist;
-
 const StButtonAssist = styled.Pressable`
   padding: 15px 134.5px;
 `;
@@ -24,3 +22,5 @@ const StButtonAssist = styled.Pressable`
 const StText = styled.Text`
   ${caption.Small}
 `;
+
+export default ButtonAssist;

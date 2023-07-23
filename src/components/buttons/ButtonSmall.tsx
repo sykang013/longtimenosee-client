@@ -1,32 +1,30 @@
 import React, { ReactNode } from 'react';
-import { PressableProps } from 'react-native';
 import styled from 'styled-components/native';
 import { label, light, globalColor } from '@/assets/themes';
+import { horizontalScale, verticalScale } from '@/utils/metric';
 
-interface ButtonMainProps extends PressableProps {
+interface ButtonSmallProps {
   buttonState?: 'InActivePrimary' | 'ActivePrimary' | 'Line' | 'BW';
   backgroundColor?: string;
-  width?: number;
-  height?: number;
   borderRadius?: number;
+  border?: number;
   onPress?: (() => void) | (() => Promise<void>);
   disabled?: boolean;
   children?: ReactNode;
   textColor?: string;
 }
 
-const ButtonMain = ({
-  buttonState = 'ActivePrimary',
+const ButtonSmall = ({
+  buttonState,
   backgroundColor,
-  width = 328,
-  height = 44,
   borderRadius = 4,
+  border = 0,
   onPress,
   children = '텍스트',
   textColor,
   disabled = false,
   ...rest
-}: ButtonMainProps) => {
+}: ButtonSmallProps) => {
   switch (buttonState) {
     case 'InActivePrimary':
       backgroundColor = globalColor.blue[200];
@@ -39,7 +37,8 @@ const ButtonMain = ({
       break;
     case 'Line':
       backgroundColor = light.background;
-      textColor = light.contents.contentMain;
+      textColor = light.contents.contentThird;
+      border = 1;
       break;
     case 'BW':
       backgroundColor = light.contents.contentMain;
@@ -50,15 +49,16 @@ const ButtonMain = ({
       textColor = light.background;
       break;
   }
+
   return (
     <StButton
       buttonState={buttonState}
       backgroundColor={backgroundColor}
-      width={width}
-      height={height}
       borderRadius={borderRadius}
+      border={border}
       onPress={onPress}
       disabled={disabled}
+      textColor={textColor}
       {...rest}
     >
       <StButtonText textColor={textColor}>{children}</StButtonText>
@@ -66,19 +66,20 @@ const ButtonMain = ({
   );
 };
 
-const StButton = styled.Pressable<ButtonMainProps>`
+const StButton = styled.Pressable<ButtonSmallProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${(props) => props.width}px;
-  height: ${(props) => props.height}px;
-  border-radius: ${(props) => props.borderRadius}px;
+  width: ${horizontalScale(152)}px;
+  height: ${verticalScale(40)}px;
+  border-radius: 4px;
+  border: ${(props) => props.border}px solid ${(props) => props.textColor};
   background-color: ${(props) => props.backgroundColor};
 `;
 
-const StButtonText = styled.Text<Pick<ButtonMainProps, 'textColor'>>`
+const StButtonText = styled.Text<Pick<ButtonSmallProps, 'textColor'>>`
   color: ${(props) => props.textColor};
   ${label.Small};
 `;
 
-export default ButtonMain;
+export default ButtonSmall;

@@ -37,8 +37,6 @@ const EmailAuthenticationScreen = ({ navigation }: ScreenProps<'EmailAuthenticat
   );
 };
 
-export default EmailAuthenticationScreen;
-
 const StContainer = styled.View`
   flex: 1;
   align-items: center;
@@ -53,3 +51,5 @@ const StText = styled.Text`
   width: 312px;
   text-align: center;
 `;
+
+export default EmailAuthenticationScreen;
