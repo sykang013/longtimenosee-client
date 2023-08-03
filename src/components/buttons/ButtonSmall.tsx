@@ -12,6 +12,7 @@ interface ButtonSmallProps {
   disabled?: boolean;
   children?: ReactNode;
   textColor?: string;
+  width?: string;
 }
 
 const ButtonSmall = ({
@@ -23,6 +24,7 @@ const ButtonSmall = ({
   children = '텍스트',
   textColor,
   disabled = false,
+  width = `${horizontalScale(152)}px`,
   ...rest
 }: ButtonSmallProps) => {
   switch (buttonState) {
@@ -59,6 +61,7 @@ const ButtonSmall = ({
       onPress={onPress}
       disabled={disabled}
       textColor={textColor}
+      width={width}
       {...rest}
     >
       <StButtonText textColor={textColor}>{children}</StButtonText>
@@ -70,7 +73,7 @@ const StButton = styled.Pressable<ButtonSmallProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${horizontalScale(152)}px;
+  width: ${(props) => props.width};
   height: ${verticalScale(40)}px;
   border-radius: 4px;
   border: ${(props) => props.border}px solid ${(props) => props.textColor};

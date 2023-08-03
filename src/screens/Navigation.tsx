@@ -46,7 +46,7 @@ const NavigationContent = () => {
   const { is_profile } = useRecoilValue(userInfo);
 
   return (
-    <Stack.Navigator initialRouteName="PlanSetDateRangeScreen">
+    <Stack.Navigator initialRouteName="AuthScreen">
       {!isUserSignedIn ? (
         <>
           <Stack.Screen name="AuthScreen" component={AuthScreen} options={{ headerShown: false }} />
@@ -145,7 +145,7 @@ const NavigationContent = () => {
         name="PlanSetDateRangeScreen"
         component={PlanSetDateRangeScreen}
         options={{
-          title: '캘린더 요호호',
+          title: '캘린더',
           headerTitleAlign: 'center',
           headerTintColor: light.contents.contentMain,
           headerTitleStyle: heading.Small,

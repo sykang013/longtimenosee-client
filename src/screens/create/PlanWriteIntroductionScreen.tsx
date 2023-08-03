@@ -3,14 +3,21 @@ import styled from 'styled-components/native';
 import { ButtonMain } from '@/components/buttons';
 import { CommonLocalNavigationBarText } from '@/components/commons';
 import { light } from '@/assets/themes';
+import { ScreenProps } from '@/types';
 
-const PlanWriteIntroductionScreen = () => {
+const PlanWriteIntroductionScreen = ({
+  navigation,
+}: ScreenProps<'PlanWriteIntroductionScreen'>) => {
   return (
     <StContainer>
       <CommonLocalNavigationBarText>약속 소개를 적어보세요.(선택사항)</CommonLocalNavigationBarText>
       <StBodyContainer></StBodyContainer>
       <StBottomContainer>
-        <ButtonMain buttonState="ActivePrimary" width={328}>
+        <ButtonMain
+          buttonState="ActivePrimary"
+          width={328}
+          onPress={() => navigation.navigate('PlanSetDateRangeScreen')}
+        >
           다음
         </ButtonMain>
       </StBottomContainer>
